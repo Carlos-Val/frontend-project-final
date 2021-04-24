@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Home from './containers/home/home';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
 
         <Switch>
 
-          <Route/>
+          <Route path='/' exact component={Home}/>
 
 
 
