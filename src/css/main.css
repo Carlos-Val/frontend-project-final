@@ -7,11 +7,26 @@
   flex-direction: row;
   background-color: black; }
   .homeContainer .imageContainer {
-    width: 50%;
+    width: 60%;
+    height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background-color: red; }
+    background-color: black; }
+    .homeContainer .imageContainer .imagePrincipal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10%;
+      margin-bottom: 15%;
+      height: 80%;
+      width: 90%; }
+      .homeContainer .imageContainer .imagePrincipal .imgComics {
+        height: 100%;
+        width: 100%; }
   .homeContainer .textForRegisterContainer {
-    width: 50%;
+    width: 40%;
+    height: 100%;
     display: flex;
     background-color: yellow; }

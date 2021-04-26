@@ -6,14 +6,33 @@
     background-color: $black;
 
     .imageContainer{   
-        width: 50%;
+        width: 60%;
+        height: 100%;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        background-color: red;
+        background-color: $black;
+
+        .imagePrincipal{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+            margin-bottom: 15%;
+            height: 80%;
+            width: 90%;
+
+            .imgComics{
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
 
     .textForRegisterContainer{
-        width: 50%;
+        width: 40%;
+        height: 100%;
         display: flex;
         background-color: yellow;
     }
