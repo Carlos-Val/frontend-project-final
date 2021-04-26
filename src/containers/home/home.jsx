@@ -8,7 +8,11 @@ const Home = () => {
 
     return (
         <div className='homeContainer'>
-            <div>
+            <div className="imageContainer">
+
+                
+            </div>
+            <div className="textForRegisterContainer">
                 
             </div>
 

@@ -67,14 +67,6 @@ const checkError = (datosCheck) => {
 
             break;
 
-            
-
-           
-
-
-
-            
-
             default: 
 
             break;

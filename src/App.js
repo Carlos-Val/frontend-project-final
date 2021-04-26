@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import './css/main.css';
 import Home from './containers/home/home';
 
 function App() {
