@@ -4,7 +4,13 @@ import Input from '../../components/input/input';
 import {connect} from 'react-redux';
 import axios from "axios";
 import {useHistory} from 'react-router-dom';
-
+import imgIronman from '../../assets/img/ironman.jpg';
+import imgCapitan from '../../assets/img/capitanamerica.jpg';
+import imgBlack from '../../assets/img/blackpanther.jpg';
+import imgDead from '../../assets/img/deadpool.jpg';
+import imgHulk from '../../assets/img/hulk.jpg';
+import imgSpider from '../../assets/img/spiderman.jpg';
+import logo from '../../assets/img/logo.jpg';
 
 
 const Register = (props) => {
@@ -66,7 +72,7 @@ const Register = (props) => {
         let endPointUser = 'http://localhost:8000/api/user';
 
         let result = await axios.post(endPointUser, body);
-
+        console.log("el result",result);
         if(result){
             alert('Usuario Registrado Correctamente');
             setTimeout(()=>{
@@ -82,18 +88,40 @@ const Register = (props) => {
 
     return(
         <div className="viewRegister">
-            <Input title="Nickname" placeholder="Nickname" type="text" maxLength="15" name="nickName" onChange={handleState}/>
-            <Input title="Nombre" placeholder="Nombre" type="text" maxLength="15" name="name" onChange={handleState}/>
-            <Input title="Primer Apellido" placeholder="Primer Apellido" type="text" maxLength="15" name="surname1" onChange={handleState}/>
-            <Input title="Segundo Apellido" placeholder="Segundo Apellido" type="text" maxLength="15" name="surname2" onChange={handleState}/>
-            <Input title="Email" placeholder="Email" type="text" maxLength="20" name="email" onChange={handleState}/>
-            <Input title="Password" placeholder="Password" type="text" maxLength="15" name="password" onChange={handleState}/>
-            <Input title="DNI" placeholder="DNI" type="text" maxLength="10" name="dni" onChange={handleState}/>
-            <Input title="Dirección" placeholder="Dirección" type="text" maxLength="30" name="adress" onChange={handleState}/>
-            <Input title="Ciudad" placeholder="Ciudad" type="text" maxLength="15" name="city" onChange={handleState}/>
-            <Input title="Código Postal" placeholder="Código Postal" type="text" maxLength="8" name="postalCode" onChange={handleState}/>
-            <button id="buttonRegister" onClick={()=> sendData()}>Enviar</button>
-                       
+            <div className="leftImg">
+                <div className="imgFace">
+                    <img className="imgSideFaces" src={imgCapitan} alt="captain"/>
+                    <img className="imgSideFaces" src={imgDead} alt="deadpool"/>
+                    <img className="imgSideFaces" src={imgBlack} alt="blackpanther"/>
+                </div>
+
+            </div>
+            <div className="boxRegister">
+
+                <div className="boxLogo">
+                    <img className="logoRegister" src={logo} alt="logo"/>
+                </div>
+                <div className="boxForm">
+                    <Input title="Nickname" placeholder="Nickname" type="text" maxLength="15" name="nickName" onChange={handleState}/>
+                    <Input title="Nombre" placeholder="Nombre" type="text" maxLength="15" name="name" onChange={handleState}/>
+                    <Input title="Primer Apellido" placeholder="Primer Apellido" type="text" maxLength="15" name="surname1" onChange={handleState}/>
+                    <Input title="Segundo Apellido" placeholder="Segundo Apellido" type="text" maxLength="15" name="surname2" onChange={handleState}/>
+                    <Input title="Email" placeholder="Email" type="text" maxLength="20" name="email" onChange={handleState}/>
+                    <Input title="Password" placeholder="Password" type="text" maxLength="15" name="password" onChange={handleState}/>
+                    <Input title="DNI" placeholder="DNI" type="text" maxLength="10" name="dni" onChange={handleState}/>
+                    <Input title="Dirección" placeholder="Dirección" type="text" maxLength="30" name="adress" onChange={handleState}/>
+                    <Input title="Ciudad" placeholder="Ciudad" type="text" maxLength="15" name="city" onChange={handleState}/>
+                    <Input title="Código Postal" placeholder="Código Postal" type="text" maxLength="8" name="postalCode" onChange={handleState}/>
+                    <button id="buttonRegister" onClick={()=> sendData()}>Enviar</button>
+                </div>
+            </div>  
+            <div className="rigthImg">
+                <div className="imgFace">
+                    <img className="imgSideFaces" src={imgHulk} alt="hulk"/>
+                    <img className="imgSideFaces" src={imgIronman} alt="ironman"/>
+                    <img className="imgSideFaces" src={imgSpider} alt="spiderman"/>
+                </div>
+            </div>         
 
         </div>
     )

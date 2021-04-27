@@ -16,7 +16,7 @@ const Home = (props) => {
     let history = useHistory();
 
     const [dataLogin, setLogin] = useState({
-        userName : "",
+        nickName : "",
         password : ""
     });
 
@@ -50,13 +50,13 @@ const Home = (props) => {
         //LO QUE ENVIAMOS AL BACKEND
 
         let body = {
-            userName : dataLogin.userName,
+            nickName : dataLogin.nickName,
             password : dataLogin.password
         }
         let endPointUser = 'http://127.0.0.1:8000/api/user/login';
         
         let result = await axios.post(endPointUser, body);
-
+        console.log("el otro result", result);
         props.dispatch({type: LOGIN, payload: result.data});
 
 
@@ -79,7 +79,7 @@ const Home = (props) => {
             </div>
             <div className="textForRegisterContainer">
                 <div className="formLogin">
-                    <Input title="UserName" type="text" placeholder="Username" maxLength="10" name="userName" onChange={handleState}/>
+                    <Input title="NickName" type="text" placeholder="Nickname" maxLength="10" name="nickName" onChange={handleState}/>
                     <Input title="Password" type="password" placeholder="Password" name="password" onChange={handleState}/>
                     <button id="buttonLogin" onClick={()=> login()}>Login</button>
                     <div className="mensajeError">{message}</div>

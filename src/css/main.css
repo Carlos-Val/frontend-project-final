@@ -33,6 +33,48 @@
     align-items: center;
     background-color: yellow; }
 
+.viewRegister {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row; }
+  .viewRegister .leftImg {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%; }
+    .viewRegister .leftImg .imgFace {
+      width: 100%;
+      height: 100%; }
+      .viewRegister .leftImg .imgFace .imgSideFaces {
+        width: 100%;
+        height: 20em; }
+  .viewRegister .boxRegister {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%; }
+    .viewRegister .boxRegister .boxLogo {
+      width: 30%;
+      height: 8em; }
+      .viewRegister .boxRegister .boxLogo .logoRegister {
+        width: 100%;
+        height: 100%; }
+  .viewRegister .rigthImg {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%; }
+    .viewRegister .rigthImg .imgFace {
+      width: 100%;
+      height: 100%; }
+      .viewRegister .rigthImg .imgFace .imgSideFaces {
+        width: 100%;
+        height: 20em; }
+
 .input {
   border-radius: 0.3em;
   height: 2em;
