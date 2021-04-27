@@ -1,6 +1,6 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
-import Home from './containers/home/home';
+
 import './css/main.css';
 
 
@@ -11,7 +11,7 @@ function App() {
 
         <Switch>
 
-          <Route path='/' exact component={Home}/>
+          <Route path='/' exact component={}/>
 
 
 
