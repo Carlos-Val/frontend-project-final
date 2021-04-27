@@ -53,15 +53,16 @@ const Home = (props) => {
             userName : dataLogin.userName,
             password : dataLogin.password
         }
-
-        let result = await axios.post('http://127.0.0.1:8000/api/user/login', body);
+        let endPointUser = 'http://127.0.0.1:8000/api/user/login';
+        
+        let result = await axios.post(endPointUser, body);
 
         props.dispatch({type: LOGIN, payload: result.data});
 
 
         if(!result.data.jwt?.error){
             setTimeout(()=>{
-                history.pushState('/profile');
+                history.push('/profile');
             },1000);
         }else{
             setMessage(result.data.jwt?.error);

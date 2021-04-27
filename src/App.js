@@ -1,6 +1,8 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Home from './containers/Home/Home';
+import Register from './containers/Register/Register';
+
 import './css/main.css';
 
 
@@ -12,6 +14,7 @@ function App() {
         <Switch>
 
           <Route path='/' exact component={Home}/>
+          <Route path='/register' exact component={Register}/>
 
 
 
