@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../../components/input/input';
-import axios from 'aixos';
+import axios from "axios";
 import {useHistory} from 'react-router-dom';
 import checkError from '../../tools/error.handlers';
 import {connect} from 'react-redux';
@@ -13,7 +13,7 @@ import imgAlls from '../../assets/img/todos2.jpg';
 
 const Home = (props) => {
 
-    //let history = useHistory();
+    let history = useHistory();
 
     const [dataLogin, setLogin] = useState({
         userName : "",
@@ -77,7 +77,7 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="textForRegisterContainer">
-                <div className="formularioLogin">
+                <div className="formLogin">
                     <Input title="UserName" type="text" placeholder="Username" maxLength="10" name="userName" onChange={handleState}/>
                     <Input title="Password" type="password" placeholder="Password" name="password" onChange={handleState}/>
                     <button id="buttonLogin" onClick={()=> login()}>Login</button>

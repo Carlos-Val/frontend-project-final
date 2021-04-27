@@ -29,6 +29,8 @@
     width: 40%;
     height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: yellow; }
 
 .input {
