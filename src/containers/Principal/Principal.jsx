@@ -3,6 +3,7 @@ import axios from "axios";
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import { SHOW } from '../../redux/types/comicTypes.js';
+import { SAVE } from '../../redux/types/saveComicTypes.js';
 import spinner from '../../assets/img/Half-Moon-Loading.svg';
 
 
@@ -34,7 +35,7 @@ const Principal = (props) => {
 
     const getList = async () => {
         const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=thisWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
-        console.log("hola", listLastCollection)
+        
 
         setList({
 
@@ -45,8 +46,7 @@ const Principal = (props) => {
 
     const getComic = async (characterId) =>{
         const comicCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
-        console.log("que trae?", comicCollection.data.data.results);
-        props.dispatch({typer: SHOW, payload: comicCollection.data.data});
+        props.dispatch({type: SHOW, payload: comicCollection.data.data});
 
         setComic({
 
@@ -56,7 +56,13 @@ const Principal = (props) => {
         return setTimeout(() => {history.push('/result')},100);
         
     }
-    console.log("los comics", comic.comics)
+    
+    const saveComic = (product) =>{
+
+        const save = props.dispatch({type: SAVE, payload: product});
+
+        setTimeout(()=>{history.push('/show-comic')}, 200);
+    }
     
     if(!list.lists?.results){
         return (
@@ -73,11 +79,11 @@ const Principal = (props) => {
                     <h1>COMICFLIX</h1>
                 </div>
                 <div className="prueba">
-                        {list.lists?.results.map(products=>{
+                        {list.lists?.results.map(product=>{
                             return(
 
-                                <div className="prueba1" key={products.id}>
-                                    <img src={`${products.thumbnail.path}.${products.thumbnail.extension}`} classname="pruebaImg"/>
+                                <div className="prueba1" onClick={()=>saveComic(product)} key={product.id}>
+                                    <img src={`${product.thumbnail.path}.${product.thumbnail.extension}`} classname="pruebaImg"/>
                                 </div>
                             )
                         })}
