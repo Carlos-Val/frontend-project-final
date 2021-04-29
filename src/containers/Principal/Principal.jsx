@@ -16,48 +16,64 @@ import spinner from '../../assets/img/Half-Moon-Loading.svg';
 
 const Principal = (props) => {
 
-    // const [comic, setComic] = useState({
-    //     comics: [],
-    // });
+    const [comic, setComic] = useState({
+        comics: []
+    });
+
+    const [list, setList] = useState({
+        lists: []
+    });
 
     const history = useHistory();
 
-    // useEffect(()=>{
+    useEffect(()=>{
         
-    //     getComic();
-    //     //eslint-disable-next-line
-    // },[])
+        getList();
+        //eslint-disable-next-line
+    },[])
 
-    // const getComic = async () =>{
-    //     const comicCollection = await axios.get('https://gateway.marvel.com:443/v1/public/characters/1009610/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
-    //     console.log("que trae?", comicCollection.data.data.results);
-    //     //props.dispatch({typer: SHOW, payload: comicCollection.data});
+    const getList = async () => {
+        const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=thisWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
+        console.log("hola", listLastCollection)
 
+        setList({
+
+            ...list, lists: listLastCollection.data.data
+        })
+
+    }
+
+    const getComic = async (characterId) =>{
+        const comicCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
+        console.log("que trae?", comicCollection.data.data.results);
+        props.dispatch({typer: SHOW, payload: comicCollection.data.data});
+
+        setComic({
+
+            ...comic, comics: comicCollection.data.data
+        });
+
+        return setTimeout(() => {history.push('/result')},100);
         
-
-    //     setComic({
-
-    //         ...comic, comics: comicCollection.data.data
-    //     })
-    // }
-    //console.log("los comics", comic.comics)
+    }
+    console.log("los comics", comic.comics)
     
-    // if(!comic.comics?.results){
-    //     return (
-    //         <div>
-    //             <div className="spinnerContainer">
-    //                 <img src={spinner} alt="spinner"/>
-    //             </div>
-    //         </div>
-    //     )
-    // }else{
+    if(!list.lists?.results){
+        return (
+            <div>
+                <div className="spinnerContainer">
+                    <img src={spinner} alt="spinner"/>
+                </div>
+            </div>
+        )
+    }else{
         return(
             <div className="containerPrincipal">
                 <div className="headerPrincipal">
                     <h1>COMICFLIX</h1>
                 </div>
-                {/* <div className="prueba">
-                        {comic.comics?.results.map(products=>{
+                <div className="prueba">
+                        {list.lists?.results.map(products=>{
                             return(
 
                                 <div className="prueba1" key={products.id}>
@@ -65,33 +81,33 @@ const Principal = (props) => {
                                 </div>
                             )
                         })}
-                    </div> */}
+                    </div>
                 <div className="containerLastComic">
 
                 </div>
                 <div className="containerCharacter">
-                    <div className="getSpiderman">1</div>
-                    <div className="getIronman">2</div>
-                    <div className="getBlackPanther">3</div>
-                    <div className="getDeadpool">4</div>
-                    <div className="getCaptainAmerica">5</div>
-                    <div className="getThor">6</div>
-                    <div className="getHult">7</div>
-                    <div className="getAvengers">8</div>
+                    <div className="getSpiderman">1<button onClick={()=>getComic(1009610)}id="buttonLogin">Login</button></div>
+                    <div className="getIronman">2<button id="buttonLogin">Login</button></div>
+                    <div className="getBlackPanther">3<button id="buttonLogin">Login</button></div>
+                    <div className="getDeadpool">4<button id="buttonLogin">Login</button></div>
+                    <div className="getCaptainAmerica">5<button id="buttonLogin">Login</button></div>
+                    <div className="getThor">6<button id="buttonLogin">Login</button></div>
+                    <div className="getHult">7<button id="buttonLogin">Login</button></div>
+                    <div className="getAvengers">8<button id="buttonLogin">Login</button></div>
 
                 </div>
             </div>
         
         )
-    //}
+    }
 };
 
-// const mapStateToProps = state => {
-//     return{
-//         comic: state.comicReducer.comic,
-//         user: state.userReducer.user
-//     };
-// };
+const mapStateToProps = state => {
+    return{
+        comic: state.comicReducer.comic,
+        user: state.userReducer.user
+    };
+};
 
 
-export default connect()(Principal)
+export default connect(mapStateToProps)(Principal)
