@@ -56,13 +56,12 @@ const Home = (props) => {
         let endPointUser = 'http://127.0.0.1:8000/api/user/login';
         
         let result = await axios.post(endPointUser, body);
-        console.log("el otro result", result);
         props.dispatch({type: LOGIN, payload: result.data});
 
 
         if(!result.data.jwt?.error){
             setTimeout(()=>{
-                history.push('/profile');
+                history.push('/principal');
             },1000);
         }else{
             setMessage(result.data.jwt?.error);
@@ -78,7 +77,11 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="textForRegisterContainer">
+                
                 <div className="formLogin">
+                    <div className="textHomeRegister">
+                        hola
+                    </div>
                     <Input title="NickName" type="text" placeholder="Nickname" maxLength="10" name="nickName" onChange={handleState}/>
                     <Input title="Password" type="password" placeholder="Password" name="password" onChange={handleState}/>
                     <button id="buttonLogin" onClick={()=> login()}>Login</button>

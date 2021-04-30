@@ -21,7 +21,7 @@
       margin-top: 10%;
       margin-bottom: 15%;
       height: 80%;
-      width: 90%; }
+      width: 80%; }
       .homeContainer .imageContainer .imagePrincipal .imgComics {
         height: 100%;
         width: 100%; }
@@ -29,9 +29,21 @@
     width: 40%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: yellow; }
+    .homeContainer .textForRegisterContainer .formLogin {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 2.5em;
+      margin-top: 3.5em;
+      border-radius: 8%;
+      width: 100%;
+      height: 18em;
+      background-color: #e60000; }
 
 .viewRegister {
   width: 100%;
@@ -97,6 +109,15 @@
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(4, 1fr); }
+
+.containerShowComic {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.titleInput {
+  margin-bottom: 0.5em; }
 
 .input {
   border-radius: 0.3em;
