@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
-import { SHOW } from '../../redux/types/comicTypes.js';
+import { SHOWCOMIC, SHOWCOUNT } from '../../redux/types/comicTypes.js';
 import { SAVE } from '../../redux/types/saveComicTypes.js';
 import spinner from '../../assets/img/Half-Moon-Loading.svg';
+import Carousel from '../../components/carousel/carousel';
+
 
 
 //public key: 4ef40f88776b5c1623dbd39d7b611a3f
@@ -16,37 +18,36 @@ import spinner from '../../assets/img/Half-Moon-Loading.svg';
 //hash: 2c50d7a4dc290b8c68573a4ae46682e7
 
 const Principal = (props) => {
-
+    console.log("pepe", props)
     const [comic, setComic] = useState({
         comics: []
     });
 
-    const [list, setList] = useState({
-        lists: []
-    });
+    // const [list, setList] = useState({
+    //     lists: []
+    // });
 
     const history = useHistory();
 
-    useEffect(()=>{
-        
-        getList();
-        //eslint-disable-next-line
-    },[])
+    //  useEffect(()=>{ 
+    //      getList();
+    //      //eslint-disable-next-line
+    //  },[])
 
-    const getList = async () => {
-        const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=thisWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
-        
+    // const getList = async () => {
+    //     const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=lastWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
+ 
+    //     props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
+    //     setList({
 
-        setList({
+    //         ...list, lists: listLastCollection.data.data
+    //     })
 
-            ...list, lists: listLastCollection.data.data
-        })
-
-    }
+    // }
 
     const getComic = async (characterId) =>{
         const comicCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
-        props.dispatch({type: SHOW, payload: comicCollection.data.data});
+        props.dispatch({type: SHOWCOMIC, payload: comicCollection.data.data});
 
         setComic({
 
@@ -59,12 +60,12 @@ const Principal = (props) => {
     
     const saveComic = (product) =>{
 
-        const save = props.dispatch({type: SAVE, payload: product});
+        props.dispatch({type: SAVE, payload: product});
 
         setTimeout(()=>{history.push('/show-comic')}, 200);
     }
     
-    if(!list.lists?.results){
+    if(!props.count?.results){
         return (
             <div>
                 <div className="spinnerContainer">
@@ -78,8 +79,9 @@ const Principal = (props) => {
                 <div className="headerPrincipal">
                     <h1>COMICFLIX</h1>
                 </div>
+                <Carousel/>
                 <div className="prueba">
-                        {list.lists?.results.map(product=>{
+                        {props.count?.results.map(product=>{
                             return(
 
                                 <div className="prueba1" onClick={()=>saveComic(product)} key={product.id}>
@@ -89,7 +91,7 @@ const Principal = (props) => {
                         })}
                     </div>
                 <div className="containerLastComic">
-
+                    
                 </div>
                 <div className="containerCharacter">
                     <div className="getSpiderman">1<button onClick={()=>getComic(1009610)}id="buttonLogin">Login</button></div>
@@ -111,6 +113,7 @@ const Principal = (props) => {
 const mapStateToProps = state => {
     return{
         comic: state.comicReducer.comic,
+        count: state.comicReducer.count,
         user: state.userReducer.user
     };
 };

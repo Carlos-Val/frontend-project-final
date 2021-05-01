@@ -6,6 +6,7 @@ import checkError from '../../tools/error.handlers';
 import {connect} from 'react-redux';
 import {LOGIN} from '../../redux/types/userTypes.js';
 import imgAlls from '../../assets/img/todos2.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -22,6 +23,7 @@ const Home = (props) => {
 
     const [message, setMessage] = useState("");
 
+
     //USEeFFECTS
     useEffect(()=>{
 
@@ -32,7 +34,6 @@ const Home = (props) => {
         setLogin({...dataLogin,[ev.target.name]: ev.target.type === 'number' ? +ev.target.value : ev.target.value});
     }
 
-    
 
     const login = async () => {
 
@@ -56,6 +57,7 @@ const Home = (props) => {
         let endPointUser = 'http://127.0.0.1:8000/api/user/login';
         
         let result = await axios.post(endPointUser, body);
+        console.log("result", result)
         props.dispatch({type: LOGIN, payload: result.data});
 
 
@@ -80,7 +82,7 @@ const Home = (props) => {
                 
                 <div className="formLogin">
                     <div className="textHomeRegister">
-                        hola
+                        Re
                     </div>
                     <Input title="NickName" type="text" placeholder="Nickname" maxLength="10" name="nickName" onChange={handleState}/>
                     <Input title="Password" type="password" placeholder="Password" name="password" onChange={handleState}/>

@@ -1,6 +1,6 @@
 .homeContainer{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     background-color: $black;
@@ -37,7 +37,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: yellow;
+        //background-color: yellow;
 
         
 
@@ -46,14 +46,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-right: $size-e;
-            margin-top: $size-g;
-            border-radius: 8%;
-            width: 100%;
+            margin-right: $size-g;
+            //margin-top: $size-g;
+            border-radius: 5%;
+            border-style: inset; 
+            width: 80%;
             height: 18em;
             background-color: $red;
+            -webkit-box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
+            -moz-box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
+            box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
 
 
         }
     }
+   
 }

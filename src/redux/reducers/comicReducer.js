@@ -1,16 +1,22 @@
-import { SHOW, SEARCH} from '../types/comicTypes.js';
+import { SHOWCOUNT, SEARCH, SHOWCOMIC} from '../types/comicTypes.js';
 
 const initialState = {
     comic: [],
+    count: [],
     query: []
 };
 
 const comicReducer = (state = initialState, action) => {
     switch(action.type){
-        case SHOW:
+        case SHOWCOMIC:
             return {
                 ...state,
                 comic: action.payload
+            }
+        case SHOWCOUNT:
+            return {
+                ...state,
+                count: action.payload
             }
         case SEARCH:
             return {
