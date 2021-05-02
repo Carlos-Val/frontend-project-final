@@ -6,7 +6,7 @@ import checkError from '../../tools/error.handlers';
 import {connect} from 'react-redux';
 import {LOGIN} from '../../redux/types/userTypes.js';
 import imgAlls from '../../assets/img/todos2.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 

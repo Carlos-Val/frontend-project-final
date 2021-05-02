@@ -17,6 +17,15 @@
         height: 22em;
         background-color: brown;
 
+        .titleCarousel{
+
+            .btnDropdown{
+                background-color: $red !important;
+                border-color: white !important;
+
+            }
+        }
+
     }
 
     .containerCharacter{

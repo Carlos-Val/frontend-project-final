@@ -14,7 +14,7 @@ import 'swiper/components/zoom/zoom.scss';
 
 
 const Carousel = (props) => {
-    console.log("props carousel", props)    
+        
     const history = useHistory();
 
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom])
@@ -30,7 +30,7 @@ const Carousel = (props) => {
         return (
             
             <div className="mainCarousel">
-                <div className="titleCarousel">Películas de Aventuras</div>                
+                                
                 <div className="carouselAdventure">                     
                     <Swiper
                         spaceBetween={0}
@@ -38,8 +38,6 @@ const Carousel = (props) => {
                         navigation
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        // onSwiper={(swiper) => console.log(swiper)}
-                        // onSlideChange={() => console.log('slide change')}
                         >
                             {props.count?.results.map(picture => 
                                 <SwiperSlide>
