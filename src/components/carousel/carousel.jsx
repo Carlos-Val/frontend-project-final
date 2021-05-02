@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import { SAVE } from '../../redux/types/saveComicTypes';
-import { SHOWCOUNT } from '../../redux/types/comicTypes';
 import { useHistory } from 'react-router-dom';
-import axios from "axios";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
@@ -19,43 +17,15 @@ const Carousel = (props) => {
     console.log("props carousel", props)    
     const history = useHistory();
 
-    const [list, setList] = useState({
-        lists: []
-    });
-    
-    
-    useEffect(() => {
-
-        getList();
-    
-    },[])
-
-
-    const getList = async () => {
-        const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=thisWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
-        
-        props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
-
-        setList({
-
-            ...list, lists: listLastCollection.data.data
-        })
-        
-    }
-    
-
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom])
-    
 
     const saveComic = (picture) => {
 
         props.dispatch({type: SAVE, payload: picture});
 
         setTimeout(() => {history.push('/show-comic')}, 100);
-
-        
-        
     }
+
     if(props.count?.results){
         return (
             
@@ -85,7 +55,7 @@ const Carousel = (props) => {
     }else{
         return(
             <div>
-                hoila
+                hola
             </div>
         )
     }

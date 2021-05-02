@@ -7,7 +7,7 @@
     .titleCarousel{
         display:flex;
         height: 2em;
-        color: $white;
+        color: white;
         align-items: center;
         justify-content: flex-start;
         margin-left: 2.5em;
@@ -16,56 +16,33 @@
     
     .carouselAdventure{
         height: 18em;
-        
-        .swiper-slide img{
-            padding: 1em 1em;
-            height: 12em;
-            width: 100%;
-            
-            &:hover{
-                
-                transform: scale(1.1);
-                transform-origin: center;
-                transition: 250ms all;
-            }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background-color: white;
+            background-color: rgba(255, 255, 255, 0.5);
+            right:10px;
+            padding: 20px;
+            color: #000 !important;
+            fill: black !important;
+            stroke: black !important;
         }
-    }
-    .carouselComedy{
-        height: 18em;
-        padding: 0.5em;
-       
-        
 
         .swiper-slide img{
             padding: 1em 1em;
-            height: 12em;
+            height: 18em;
             width: 100%;
             
             &:hover{
                 
                 transform: scale(1.1);
-                transform-origin: center;
+                //transform-origin: center;
                 transition: 250ms all;
-            }
-        }
-    }
-    .carouselDrama{
-        height: 18em;
-        
-        
-
-        .swiper-slide img{
-            padding: 1em 1em;
-            height: 12em;
-            width: 100%;
-            
-            &:hover{
+                filter: saturate(250%);
                 
-                transform: scale(1.1);
-                transform-origin: center;
-                transition: 250ms all;
             }
         }
     }
+   
 
 }
