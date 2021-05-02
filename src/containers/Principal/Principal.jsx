@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import { SHOWCOMIC, SHOWCOUNT } from '../../redux/types/comicTypes.js';
 import { SAVE } from '../../redux/types/saveComicTypes.js';
-import spinner from '../../assets/img/Half-Moon-Loading.svg';
+import spinner from '../../assets/img/spinner.gif';
 import Carousel from '../../components/carousel/carousel';
 
 
@@ -18,33 +18,26 @@ import Carousel from '../../components/carousel/carousel';
 //hash: 2c50d7a4dc290b8c68573a4ae46682e7
 
 const Principal = (props) => {
-    console.log("pepe", props)
+    
     const [comic, setComic] = useState({
         comics: []
     });
 
-    // const [list, setList] = useState({
-    //     lists: []
-    // });
+    const [list, setList] = useState({
+        lists: []
+    });
 
+    
     const history = useHistory();
 
-    //  useEffect(()=>{ 
-    //      getList();
-    //      //eslint-disable-next-line
-    //  },[])
+    useEffect(() => {
+        const timeOut = setTimeout(() => {
+            getList();
+        },5000)
+        return () => clearTimeout(timeOut);
+    },[])
 
-    // const getList = async () => {
-    //     const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=lastWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
- 
-    //     props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
-    //     setList({
-
-    //         ...list, lists: listLastCollection.data.data
-    //     })
-
-    // }
-
+    
     const getComic = async (characterId) =>{
         const comicCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
         props.dispatch({type: SHOWCOMIC, payload: comicCollection.data.data});
@@ -55,41 +48,44 @@ const Principal = (props) => {
         });
 
         return setTimeout(() => {history.push('/result')},100);
+    }
+
+    const getList = async () => {
+        const listLastCollection = await axios.get('https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=thisWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7');
+        
+        props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
+
+        setList({
+
+            ...list, lists: listLastCollection.data.data
+        })
         
     }
-    
-    const saveComic = (product) =>{
 
-        props.dispatch({type: SAVE, payload: product});
 
-        setTimeout(()=>{history.push('/show-comic')}, 200);
-    }
     
+        
     if(!props.count?.results){
+        
         return (
             <div>
+                
                 <div className="spinnerContainer">
                     <img src={spinner} alt="spinner"/>
                 </div>
+                
             </div>
         )
+    
     }else{
         return(
             <div className="containerPrincipal">
                 <div className="headerPrincipal">
                     <h1>COMICFLIX</h1>
                 </div>
-                <Carousel/>
-                <div className="prueba">
-                        {props.count?.results.map(product=>{
-                            return(
-
-                                <div className="prueba1" onClick={()=>saveComic(product)} key={product.id}>
-                                    <img src={`${product.thumbnail.path}.${product.thumbnail.extension}`} classname="pruebaImg"/>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <div className="containerCarousel">
+                    <Carousel/>
+                </div>
                 <div className="containerLastComic">
                     
                 </div>

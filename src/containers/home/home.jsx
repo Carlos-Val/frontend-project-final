@@ -64,7 +64,7 @@ const Home = (props) => {
         if(!result.data.jwt?.error){
             setTimeout(()=>{
                 history.push('/principal');
-            },1000);
+            },500);
         }else{
             setMessage(result.data.jwt?.error);
         }

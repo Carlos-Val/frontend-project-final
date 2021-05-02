@@ -155,5 +155,4 @@
       .mainCarousel .carouselAdventure .swiper-slide img:hover {
         transform: scale(1.1);
         transition: 250ms all;
-        filter: saturate(250%);
-        z-index: 1; }
+        filter: saturate(250%); }
