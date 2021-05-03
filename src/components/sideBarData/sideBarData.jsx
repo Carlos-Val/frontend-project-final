@@ -7,12 +7,12 @@ import React from 'react';
  
  export const SideBarData = [
    {
-     path: '/home-movie',
+     path: '/principal',
      icon: <AiIcons.AiFillHome />,
      cName: 'nav-text'
    },
    {
-    path: '/user-profile',
+    path: '/profile',
     icon: <FaIcons.FaUser />,
     cName: 'nav-text'
    },

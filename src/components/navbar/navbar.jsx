@@ -46,7 +46,7 @@ function Navbar(props) {
                {SideBarData.map((item, index) => {
                  return (
                    <div>
-                     <li key={index} className={item.cName}>
+                     <li key={index.id} className={item.cName}>
                        <Link to={item.path}>
                          {item.icon}
                        </Link>

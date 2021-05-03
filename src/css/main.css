@@ -124,10 +124,6 @@
   display: flex;
   flex-direction: column;
   background-color: black; }
-  .containerPrincipal .headerPrincipal {
-    width: 100%;
-    height: 6em;
-    background-color: blue; }
   .containerPrincipal .containerCarousel {
     width: 100%;
     height: 22em;
@@ -204,6 +200,26 @@
         transform: scale(1.15);
         transition: 250ms all;
         filter: saturate(200%); }
+
+.containerHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 5em; }
+  .containerHeader .containerSearchHeader {
+    width: 25em;
+    height: 5em; }
+  .containerHeader .containerNavbarHeader {
+    width: 8em;
+    height: 5em; }
+  .containerHeader .headerContainerLogo {
+    margin-left: 16.5em;
+    width: 8em;
+    height: 5em; }
+    .containerHeader .headerContainerLogo .logoHeader {
+      width: 100%;
+      height: 100%; }
 
 .searchContainer {
   display: flex;

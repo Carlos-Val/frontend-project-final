@@ -1,0 +1,30 @@
+.containerHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 5em;
+
+    .containerSearchHeader{
+        width: 25em;
+        height: 5em;
+
+    }
+
+    .containerNavbarHeader{
+        width: 8em;
+        height: 5em;
+    }
+
+    .headerContainerLogo{
+        margin-left: 16.5em;
+        width: 8em;
+        height: 5em;
+
+        .logoHeader{
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+}

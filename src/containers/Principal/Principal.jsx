@@ -109,7 +109,6 @@ const Principal = (props) => {
             <div className="containerPrincipal">
                 <div className="headerPrincipal">
                     <Header></Header>
-                    <h1>COMICFLIX</h1>
                 </div>
                 <div className="containerCarousel">
                     <div className="titleCarousel">

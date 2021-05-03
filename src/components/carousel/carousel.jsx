@@ -41,7 +41,7 @@ const Carousel = (props) => {
                         >
                             {props.count?.results.map(picture => 
                                 <SwiperSlide>
-                                    <div onClick={()=> saveComic(picture)} className="swiper-slide">               
+                                    <div onClick={()=> saveComic(picture)} className="swiper-slide" key={picture.id}>               
                                         <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`}/>
                                     </div>  
                                 </SwiperSlide>
