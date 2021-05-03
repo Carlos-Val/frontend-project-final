@@ -1,12 +1,14 @@
 import React from 'react';
+import SearchBox from '../searchBox/searchBox';
 
 
-const header = () => {
+const Header = () => {
     return (
         <div>
+            <SearchBox></SearchBox>
             
         </div>
     )
 }
 
-export default header
+export default Header

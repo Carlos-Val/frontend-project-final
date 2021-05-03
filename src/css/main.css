@@ -204,3 +204,14 @@
         transform: scale(1.15);
         transition: 250ms all;
         filter: saturate(200%); }
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8vh;
+  margin-right: 2em; }
+  .searchContainer .searchBox {
+    display: flex;
+    width: 20em;
+    border-radius: 0.5em; }

@@ -16,6 +16,7 @@ import captainAmerica from '../../assets/img/logocaptain.png';
 import thor from '../../assets/img/logothor.png';
 import hulk from '../../assets/img/logohulk.png';
 import avengers from '../../assets/img/logoavengers.png';
+import Header from '../../components/header/header.jsx';
 
 
 //public key: 4ef40f88776b5c1623dbd39d7b611a3f
@@ -107,6 +108,7 @@ const Principal = (props) => {
         return(
             <div className="containerPrincipal">
                 <div className="headerPrincipal">
+                    <Header></Header>
                     <h1>COMICFLIX</h1>
                 </div>
                 <div className="containerCarousel">
