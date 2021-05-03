@@ -7,10 +7,10 @@
 @import './containers/Register/Register';
 @import './containers/Profile/Profile';
 @import './containers/Principal/Principal';
-@import './containers/Result/Result';
 @import './containers/showComic/showComic';
-
+@import './containers/Total/Total';
 
 //Importación de componentes con scss
 @import './components/input/input';
 @import './components/carousel/carousel';
+@import './components/header/header';

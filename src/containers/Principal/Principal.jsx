@@ -3,7 +3,7 @@ import axios from "axios";
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import { SHOWCOMIC, SHOWCOUNT } from '../../redux/types/comicTypes.js';
-import { SAVE } from '../../redux/types/saveComicTypes.js';
+//import { SAVE } from '../../redux/types/saveComicTypes.js';
 import spinner from '../../assets/img/spinner.gif';
 import Carousel from '../../components/carousel/carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,7 +46,7 @@ const Principal = (props) => {
 
     useEffect(() => {
         const timeOut = setTimeout(() => {
-            getList1();
+            getListInitial();
         },5000)
         return () => clearTimeout(timeOut);
         
@@ -67,7 +67,7 @@ const Principal = (props) => {
             ...comic, comics: comicCollection.data.data
         });
 
-        return setTimeout(() => {history.push('/result')},100);
+        return setTimeout(() => {history.push('/total')},100);
     }
 
      const getList = async (lastComics) => {
@@ -80,7 +80,7 @@ const Principal = (props) => {
       
      }
 
-     const getList1 = async () => {
+     const getListInitial = async () => {
          const listLastCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=lastWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
       
          props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});

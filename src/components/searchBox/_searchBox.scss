@@ -1,0 +1,16 @@
+.searchContainer {
+    display: flex;
+    justify-content: flex-end ;
+    align-items: center;
+  
+    height: 8vh;
+    margin-right: 2em;
+
+    .searchBox{
+        display: flex;
+        width: 20em;
+        border-radius: 0.5em;
+
+        
+    }
+}

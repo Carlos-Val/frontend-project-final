@@ -11,11 +11,6 @@ import linkedin from '../../assets/img/logolinkedin.png';
 import github from '../../assets/img/logogithub.png';
 
 
-
-
-
-
-
 const Home = (props) => {
 
     let history = useHistory();
@@ -38,7 +33,12 @@ const Home = (props) => {
         setLogin({...dataLogin,[ev.target.name]: ev.target.type === 'number' ? +ev.target.value : ev.target.value});
     }
 
-
+    const redirect = () => {
+        return setTimeout(() => {
+          history.push('/register')
+        }, 1000);
+    }
+    
     const login = async () => {
 
         //COMPROBACION DE ERRORES
@@ -94,7 +94,7 @@ const Home = (props) => {
                         </div>
                         <div className="containerBtnHome">
                             <Button color="dark" onClick={()=> login()}>Login</Button>{' '}
-                            <Button color="dark" onClick={()=> login()}>Regístrate</Button>{' '}   
+                            <Button color="dark" onClick={()=> redirect()}>Regístrate</Button>{' '}   
                         </div>
 
                     </div>
