@@ -9,8 +9,8 @@ import Carousel from '../../components/carousel/carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
 import spiderman from '../../assets/img/logospiderman.png';
-import ironman from '../../assets/img/logoironman.jpg';
-import blackPanther from '../../assets/img/logoblack.jpg';
+import ironman from '../../assets/img/logoironman.png';
+import blackPanther from '../../assets/img/logoblack.png';
 import deadpool from '../../assets/img/logodeadpool.png';
 import captainAmerica from '../../assets/img/logocaptain.png';
 import thor from '../../assets/img/logothor.png';
@@ -130,14 +130,14 @@ const Principal = (props) => {
                     
                 </div>
                 <div className="containerCharacter">
-                    <div className="getSpiderman">1<img src={spiderman} onClick={()=>getComic(1009610)} id="buttonLogin"/></div>
-                    <div className="getIronman">2<img src={ironman} onClick={()=>getComic(1009368)} id="buttonLogin"/></div>
-                    <div className="getBlackPanther">3<img src={blackPanther} onClick={()=>getComic(1009187)} id="buttonLogin"/></div>
-                    <div className="getDeadpool">4<img src={deadpool} onClick={()=>getComic(1009268)} id="buttonLogin"/></div>
-                    <div className="getCaptainAmerica">5<img src={captainAmerica} onClick={()=>getComic(1017575)} id="buttonLogin"/></div>
-                    <div className="getThor">6<img src={thor} onClick={()=>getComic(1009664)} id="buttonLogin"/></div>
-                    <div className="getHulk">7<img src={hulk} onClick={()=>getComic(1009351)} id="buttonLogin"/></div>
-                    <div className="getAvengers">8<img src={avengers} onClick={()=>getComic(1009165)} id="buttonLogin"/></div>
+                    <div className="getCharacter">1<img src={spiderman} onClick={()=>getComic(1009610)} id="logoSuper"/></div>
+                    <div className="getCharacter">2<img src={ironman} onClick={()=>getComic(1009368)} id="logoSuper"/></div>
+                    <div className="getCharacter">3<img src={blackPanther} onClick={()=>getComic(1009187)} id="logoSuper"/></div>
+                    <div className="getCharacter">4<img src={deadpool} onClick={()=>getComic(1009268)} id="logoSuper"/></div>
+                    <div className="getCharacter">5<img src={captainAmerica} onClick={()=>getComic(1017575)} id="logoSuper"/></div>
+                    <div className="getCharacter">6<img src={thor} onClick={()=>getComic(1009664)} id="logoSuper"/></div>
+                    <div className="getCharacter">7<img src={hulk} onClick={()=>getComic(1009351)} id="logoSuper"/></div>
+                    <div className="getCharacter">8<img src={avengers} onClick={()=>getComic(1009165)} id="logoSuper"/></div>
 
                 </div>
             </div>

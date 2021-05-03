@@ -29,16 +29,16 @@
         }
 
         .swiper-slide img{
-            padding: 1em 1em;
-            height: 18em;
+            padding: 0.5em 0.5em;
+            height: 19em;
             width: 100%;
             
             &:hover{
                 
-                transform: scale(1.1);
+                transform: scale(1.15);
                 //transform-origin: center;
                 transition: 250ms all;
-                filter: saturate(250%);
+                filter: saturate(200%);
                 
             }
         }

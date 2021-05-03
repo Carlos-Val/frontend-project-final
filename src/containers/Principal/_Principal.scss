@@ -35,7 +35,19 @@
         display: grid;
         justify-content: center;
         align-items: center;
-        grid-template-columns: repeat(4, 1fr)
+        grid-template-columns: repeat(4, 1fr);
+
+        .getCharacter{
+            display: flex;
+            flex-direction: row;
+            width: 8em;
+            height: 8em;
+            border-radius: 100%;
+        }
+        
+        #logoSuper{
+            border-radius: 50%;
+        }
 
     }
 }
