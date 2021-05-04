@@ -1,4 +1,4 @@
-import { SHOWCOUNT, SEARCH, SHOWCOMIC} from '../types/comicTypes.js';
+import { SHOWCOUNT, SEARCH, SHOWCOMIC, LOGOUTCOMIC} from '../types/comicTypes.js';
 
 const initialState = {
     comic: [],
@@ -22,6 +22,9 @@ const comicReducer = (state = initialState, action) => {
                 ...state,
                 comic: action.payload
             }
+        case LOGOUTCOMIC :
+            return initialState
+    
         default:
             return state
     }

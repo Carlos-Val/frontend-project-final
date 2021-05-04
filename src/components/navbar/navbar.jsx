@@ -9,6 +9,8 @@ import './reset.css';
 import {IconContext} from 'react-icons';
 import {LOGOUT} from '../../redux/types/userTypes';
 import {useHistory} from 'react-router-dom';
+import { LOGOUTCOMIC } from '../../redux/types/comicTypes';
+import { LOGOUTSAVE } from '../../redux/types/saveComicTypes';
 
 
 function Navbar(props) {
@@ -21,6 +23,8 @@ function Navbar(props) {
     const logOut =  () => {
  
        props.dispatch({type: LOGOUT, payload : {}});
+       props.dispatch({type: LOGOUTSAVE, payload : {}});
+       props.dispatch({type: LOGOUTCOMIC, payload : {}});
  
        setTimeout(()=> {
            history.push('/');

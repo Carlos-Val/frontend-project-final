@@ -21,22 +21,30 @@ const Total = (props) => {
 
 
     if(!props.comic?.results){
-        console.log("props", props)
+        
         return (
             <div>
-                
-                <div className="spinnerContainer">
-                {props.comic.map(picture => 
-                            <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
-                                <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`}/>
-                            </div>
+                <div className="containerTotal">
+                    <div className="headerTotal">
+
+                    </div>
+
+                    <div className="bodyTotal">
+
+                        <div className="imagesTotal">
+                            {props.comic.map(picture => 
+                                    <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
+                                        <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`}/>
+                                    </div>
                             )}
+                        </div>
+                    </div>
                 </div>
             </div>
         )
     
     }else{
-        console.log("props buenas", props)
+        
         return(
         <div>
             <div className="containerTotal">

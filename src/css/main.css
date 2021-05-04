@@ -163,7 +163,8 @@
 .containerTotal {
   display: flex;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  background-color: black; }
   .containerTotal .bodyTotal .imagesTotal .imgTotal {
     height: 19em;
     width: 100%; }

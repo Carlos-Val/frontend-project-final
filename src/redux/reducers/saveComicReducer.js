@@ -1,4 +1,4 @@
-import { SAVE } from '../types/saveComicTypes';
+import { SAVE, LOGOUTSAVE} from '../types/saveComicTypes';
 
 const initialState = {
     saveComic: []
@@ -11,6 +11,9 @@ const rentalReducer = (state = initialState, action) => {
         ...state, 
         saveComic: action.payload
       }
+      case LOGOUTSAVE :
+        return initialState
+
     //   case RENT: 
     //   return {
     //     ...state, 
