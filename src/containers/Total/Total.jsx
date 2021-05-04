@@ -2,7 +2,6 @@ import React from 'react';
 import {SAVE} from '../../redux/types/saveComicTypes.js';
 import { useHistory } from 'react-router-dom';
 import {connect} from 'react-redux';
-import spinner from '../../assets/img/spinner.gif'
 
 
 
@@ -22,17 +21,22 @@ const Total = (props) => {
 
 
     if(!props.comic?.results){
+        console.log("props", props)
         return (
             <div>
                 
                 <div className="spinnerContainer">
-                    <img src={spinner} alt="spinner"/>
+                {props.comic.map(picture => 
+                            <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
+                                <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`}/>
+                            </div>
+                            )}
                 </div>
-                
             </div>
         )
     
     }else{
+        console.log("props buenas", props)
         return(
         <div>
             <div className="containerTotal">

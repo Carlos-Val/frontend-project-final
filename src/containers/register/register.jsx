@@ -28,7 +28,7 @@ const Register = (props) => {
         email : "",
         password : "",
         dni : "",
-        adress : "",
+        address : "",
         city : "",
         postalCode : ""
     });
@@ -64,7 +64,7 @@ const Register = (props) => {
             email : user.email,
             password : user.password,
             dni : user.dni,
-            adress : user.adress,
+            address : user.address,
             city : user.city,
             postalCode : user.postalCode
         };
@@ -76,7 +76,7 @@ const Register = (props) => {
         if(result){
             alert('Usuario Registrado Correctamente');
             setTimeout(()=>{
-                history.push('/profile')
+                history.push('/')
             },1000);
         }else {
             alert('No se pudo completar el registro, vuelve a intentarlo en otro momento');
@@ -107,12 +107,13 @@ const Register = (props) => {
                     <Input title="Primer Apellido" placeholder="Primer Apellido" type="text" maxLength="15" name="surname1" onChange={handleState}/>
                     <Input title="Segundo Apellido" placeholder="Segundo Apellido" type="text" maxLength="15" name="surname2" onChange={handleState}/>
                     <Input title="Email" placeholder="Email" type="text" maxLength="20" name="email" onChange={handleState}/>
-                    <Input title="Password" placeholder="Password" type="text" maxLength="15" name="password" onChange={handleState}/>
+                    <Input title="Password" placeholder="Password" type="password" maxLength="15" name="password" onChange={handleState}/>
                     <Input title="DNI" placeholder="DNI" type="text" maxLength="10" name="dni" onChange={handleState}/>
-                    <Input title="Dirección" placeholder="Dirección" type="text" maxLength="30" name="adress" onChange={handleState}/>
+                    <Input title="Dirección" placeholder="Dirección" type="text" maxLength="30" name="address" onChange={handleState}/>
                     <Input title="Ciudad" placeholder="Ciudad" type="text" maxLength="15" name="city" onChange={handleState}/>
                     <Input title="Código Postal" placeholder="Código Postal" type="text" maxLength="8" name="postalCode" onChange={handleState}/>
                     <button id="buttonRegister" onClick={()=> sendData()}>Enviar</button>
+                    <div className="menssageError">{message}</div>
                 </div>
             </div>  
             <div className="rigthImg">

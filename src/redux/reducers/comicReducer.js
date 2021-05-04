@@ -2,8 +2,7 @@ import { SHOWCOUNT, SEARCH, SHOWCOMIC} from '../types/comicTypes.js';
 
 const initialState = {
     comic: [],
-    count: [],
-    query: []
+    count: []
 };
 
 const comicReducer = (state = initialState, action) => {
@@ -21,7 +20,7 @@ const comicReducer = (state = initialState, action) => {
         case SEARCH:
             return {
                 ...state,
-                query: action.payload
+                comic: action.payload
             }
         default:
             return state

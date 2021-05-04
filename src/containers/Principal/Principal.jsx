@@ -62,7 +62,7 @@ const Principal = (props) => {
     const getComic = async (characterId) =>{
         const comicCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
         props.dispatch({type: SHOWCOMIC, payload: comicCollection.data.data});
-
+        console.log("personajes", comicCollection)
         setComic({
 
             ...comic, comics: comicCollection.data.data
@@ -127,18 +127,16 @@ const Principal = (props) => {
                    
                     <Carousel/>
                 </div>
-                <div className="containerLastComic">
-                    
-                </div>
                 <div className="containerCharacter">
-                    <div className="getCharacter">1<img src={spiderman} onClick={()=>getComic(1009610)} id="logoSuper"/></div>
-                    <div className="getCharacter">2<img src={ironman} onClick={()=>getComic(1009368)} id="logoSuper"/></div>
-                    <div className="getCharacter">3<img src={blackPanther} onClick={()=>getComic(1009187)} id="logoSuper"/></div>
-                    <div className="getCharacter">4<img src={deadpool} onClick={()=>getComic(1009268)} id="logoSuper"/></div>
-                    <div className="getCharacter">5<img src={captainAmerica} onClick={()=>getComic(1017575)} id="logoSuper"/></div>
-                    <div className="getCharacter">6<img src={thor} onClick={()=>getComic(1009664)} id="logoSuper"/></div>
-                    <div className="getCharacter">7<img src={hulk} onClick={()=>getComic(1009351)} id="logoSuper"/></div>
-                    <div className="getCharacter">8<img src={avengers} onClick={()=>getComic(1009165)} id="logoSuper"/></div>
+                    
+                    <div className="getCharacter"><img src={spiderman} onClick={()=>getComic(1009610)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={ironman} onClick={()=>getComic(1009368)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={blackPanther} onClick={()=>getComic(1009187)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={deadpool} onClick={()=>getComic(1009268)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={captainAmerica} onClick={()=>getComic(1017575)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={thor} onClick={()=>getComic(1009664)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={hulk} onClick={()=>getComic(1009351)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={avengers} onClick={()=>getComic(1009165)} className="logoSuper"/></div>
 
                 </div>
             </div>

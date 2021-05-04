@@ -36,7 +36,7 @@
             &:hover{
                 
                 transform: scale(1.15);
-                //transform-origin: center;
+                cursor: pointer;
                 transition: 250ms all;
                 filter: saturate(200%);
                 

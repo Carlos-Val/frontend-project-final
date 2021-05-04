@@ -22,16 +22,25 @@ const SearchBox = (props) => {
     const searchEngine = async () => {
         
         const result = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?title=${search.searchBox}&ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
-        console.log("result", result)
+        
         const arraySearch = result.data.data.results.filter(explore => 
             explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
         )
-        
+        console.log("buscador", arraySearch);
         props.dispatch({type: SEARCH, payload: arraySearch})
+        
 
         setSearch({
             ...search, searchBox: arraySearch
-        }) 
+        });
+
+        
+        // props.dispatch({type: SHOWCOMIC, payload: comicCollection.data.data});
+
+        // setComic({
+
+        //     ...comic, comics: comicCollection.data.data
+        // });
 
         return setTimeout(() => {history.push('/total')},100);
     }
@@ -49,7 +58,6 @@ const SearchBox = (props) => {
         </div>
     )
 }
-
 
 
 export default connect () (SearchBox);

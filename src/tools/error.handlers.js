@@ -8,7 +8,17 @@ const checkError = (datosCheck) => {
 
         switch(field) {
 
-            case 'nombre' : 
+            case 'nickName' :
+                
+                // eslint-disable-next-line
+                if(! /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/.test(datosCheck[field]) ){
+                    
+                    return "El nickName introducido no es valido";
+                }
+            
+            break;
+
+            case 'name' : 
 
                 // eslint-disable-next-line
                 if(! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(datosCheck[field])){
@@ -18,7 +28,7 @@ const checkError = (datosCheck) => {
 
             break;
 
-            case 'apellido1' : 
+            case 'surname1' : 
 
                 // eslint-disable-next-line
                 if(! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(datosCheck[field])){
@@ -28,7 +38,7 @@ const checkError = (datosCheck) => {
 
             break;
 
-            case 'apellido2' : 
+            case 'surname2' : 
 
                 // eslint-disable-next-line
                 if(! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(datosCheck[field])){
@@ -66,6 +76,38 @@ const checkError = (datosCheck) => {
                 }
 
             break;
+
+            case 'address' : 
+
+                // eslint-disable-next-line
+                if(! /^[A-Za-z0-9'\.\-\s\,]/.test(datosCheck[field])){
+
+                    return "La dirección introducida no es correcta";
+                }
+
+            break;
+
+            case 'city' : 
+
+                // eslint-disable-next-line
+                if(! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(datosCheck[field])){
+
+                    return "La ciudad introducida solo puede contener letras";
+                }
+
+            break;
+
+            case 'postalCode' : 
+
+                // eslint-disable-next-line
+                if(! /^[0-9]{5,5}/.test(datosCheck[field])){
+
+                    return "El código postal solo puede llevar números";
+                }
+
+            break;
+
+
 
             default: 
 
