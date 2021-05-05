@@ -81,7 +81,8 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: row; }
+  flex-direction: row;
+  background-color: black; }
   .viewRegister .leftImg {
     display: flex;
     flex-direction: column;
@@ -104,8 +105,17 @@
       width: 30%;
       height: 8em; }
       .viewRegister .boxRegister .boxLogo .logoRegister {
-        width: 100%;
-        height: 100%; }
+        width: 70%;
+        height: 70%; }
+    .viewRegister .boxRegister .textRegister {
+      color: white; }
+    .viewRegister .boxRegister .main-container {
+      margin-top: 2em; }
+      .viewRegister .boxRegister .main-container .invalid-feedback {
+        display: inline-flex;
+        width: 325px; }
+      .viewRegister .boxRegister .main-container .btn-danger {
+        margin: 1em; }
   .viewRegister .rigthImg {
     display: flex;
     flex-direction: column;
@@ -117,6 +127,11 @@
       .viewRegister .rigthImg .imgFace .imgSideFaces {
         width: 100%;
         height: 20em; }
+
+.profileContainer {
+  background-color: black;
+  width: 100%;
+  height: 100vh; }
 
 .containerPrincipal {
   width: 100%;
@@ -214,7 +229,8 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 5em; }
+  height: 5em;
+  background-color: black; }
   .containerHeader .containerSearchHeader {
     width: 25em;
     height: 5em; }
@@ -228,6 +244,11 @@
     .containerHeader .headerContainerLogo .logoHeader {
       width: 100%;
       height: 100%; }
+
+.textWelcome {
+  color: white;
+  margin-top: 1.5em;
+  background-color: black; }
 
 .searchContainer {
   display: flex;

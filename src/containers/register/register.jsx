@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react";
-import checkError from '../../tools/error.handlers';
-import Input from '../../components/input/input';
 import {connect} from 'react-redux';
 import axios from "axios";
 import {useHistory} from 'react-router-dom';
@@ -12,10 +10,19 @@ import imgHulk from '../../assets/img/hulk.jpg';
 import imgSpider from '../../assets/img/spiderman.jpg';
 import logo from '../../assets/img/logo.jpg';
 
+import {validateField, validateFields} from '../../tools/error.handlers';
+import { Button, FormGroup, Input, FormFeedback } from 'reactstrap';
 
-const Register = (props) => {
+
+const Register = () => {
      
     let history = useHistory();
+
+     //Validación de errores en el formulario
+     const [validationResult, setValidationResult] = useState({
+        validated: false,
+        name: null
+    });
 
 
     //HOOKS
@@ -33,58 +40,54 @@ const Register = (props) => {
         postalCode : ""
     });
 
-    const [message, setMessage] = useState("");
 
-    //Manejador de estado
+    //Manejador
+    const handleState = (event) => {
 
-    const handleState = (e) => {
-        setUser({...user, [e.target.name]: e.target.value });
-    };
+        //
+        setValidationResult({
+            //
+            ...validationResult,
+            //
+            [event.target.name]: validateField(event.target.name, event.target.value)
+        });
 
-    //Enviar datos del registro
+        let data = { ...user, [event.target.name]: event.target.value };
+        setUser(data)
+        
+    }
+
     const sendData = async () => {
-        //Comprobación de errores
-        setMessage("");
+        let validationResult = validateFields(user);
+        
 
-        let messageError = checkError(user);
+        if(validationResult.address === null && validationResult.city === null && validationResult.dni === null && validationResult.email === null &&
+            validationResult.name === undefined && validationResult.nickName === undefined && validationResult.password === null && validationResult.postalCode === null 
+            && validationResult.surname1 === undefined && validationResult.surname2 === undefined){
+                //Setea el estado de validación
+            setValidationResult({
+                ...validationResult,
+                validated: true
+            });
 
-        setMessage(messageError);
+            let result = await axios.post('http://localhost:8000/api/user', user);
+            console.log(result, 'esto es result');
 
-        if(messageError){
-            return;
-        };
+            if(result){
 
-        //Body a enviar al backend
-
-        let body ={
-            nickName : user.nickName,
-            name : user.name,
-            surname1 : user.surname1,
-            surname2 : user.surname2,
-            email : user.email,
-            password : user.password,
-            dni : user.dni,
-            address : user.address,
-            city : user.city,
-            postalCode : user.postalCode
-        };
-
-        let endPointUser = 'http://localhost:8000/api/user';
-
-        let result = await axios.post(endPointUser, body);
-        console.log("el result",result);
-        if(result){
-            alert('Usuario Registrado Correctamente');
-            setTimeout(()=>{
-                history.push('/')
-            },1000);
+                    alert('Usuario Registrado Correctamente');
+                    setTimeout(()=>{
+                        history.push('/')
+                    },1000);
+                }
         }else {
-            alert('No se pudo completar el registro, vuelve a intentarlo en otro momento');
-        }
+                    alert('No se pudo completar el registro');
+                }
 
-    };
+        
+    }
 
-    //RETURN
+    
 
     return(
         <div className="viewRegister">
@@ -101,22 +104,58 @@ const Register = (props) => {
                 <div className="boxLogo">
                     <img className="logoRegister" src={logo} alt="logo"/>
                 </div>
-                <div className="boxForm">
-                    <Input title="Nickname" placeholder="Nickname" type="text" maxLength="15" name="nickName" onChange={handleState}/>
-                    <Input title="Nombre" placeholder="Nombre" type="text" maxLength="15" name="name" onChange={handleState}/>
-                    <Input title="Primer Apellido" placeholder="Primer Apellido" type="text" maxLength="15" name="surname1" onChange={handleState}/>
-                    <Input title="Segundo Apellido" placeholder="Segundo Apellido" type="text" maxLength="15" name="surname2" onChange={handleState}/>
-                    <Input title="Email" placeholder="Email" type="text" maxLength="20" name="email" onChange={handleState}/>
-                    <Input title="Password" placeholder="Password" type="password" maxLength="15" name="password" onChange={handleState}/>
-                    <Input title="DNI" placeholder="DNI" type="text" maxLength="10" name="dni" onChange={handleState}/>
-                    <Input title="Dirección" placeholder="Dirección" type="text" maxLength="30" name="address" onChange={handleState}/>
-                    <Input title="Ciudad" placeholder="Ciudad" type="text" maxLength="15" name="city" onChange={handleState}/>
-                    <Input title="Código Postal" placeholder="Código Postal" type="text" maxLength="8" name="postalCode" onChange={handleState}/>
-                    <button id="buttonRegister" onClick={()=> sendData()}>Enviar</button>
-                    <div className="menssageError">{message}</div>
+                <div className="textRegister">
+                    Regístrate!! Y disfruta de los últimos comics del momento!!
                 </div>
-            </div>  
-            <div className="rigthImg">
+                <div className='main-container'>
+                    <div className='form-container'>
+                        <FormGroup>
+                            <Input type='text' placeholder='nickName' id='nickName' name='nickName' onChange={handleState} valid={validationResult.validated && !validationResult.nickName} invalid={validationResult.validated && validationResult.nickName} />
+                            <FormFeedback>{validationResult.nickName}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Nombre' id='name' name='name' onChange={handleState} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name} />
+                            <FormFeedback>{validationResult.name}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Primer apellido' id='surname1' name='surname1' onChange={handleState} valid={validationResult.validated && !validationResult.surname1} invalid={validationResult.validated && validationResult.surname1} />
+                            <FormFeedback>{validationResult.surname1}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Segundo apellido' id='surname2' name='surname2' onChange={handleState} valid={validationResult.validated && !validationResult.surname2} invalid={validationResult.validated && validationResult.surname2} />
+                            <FormFeedback>{validationResult.surname2}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Email' id='email' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
+                            <FormFeedback>{validationResult.email}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='password' placeholder='Password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
+                            <FormFeedback>{validationResult.password}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='DNI' id='dni' name='dni' onChange={handleState} valid={validationResult.validated && !validationResult.dni} invalid={validationResult.validated && validationResult.dni} />
+                            <FormFeedback>{validationResult.dni}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Dirección' id='address' name='address' onChange={handleState} valid={validationResult.validated && !validationResult.address} invalid={validationResult.validated && validationResult.address} />
+                            <FormFeedback>{validationResult.address}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Ciudad' id='city' name='city' onChange={handleState} valid={validationResult.validated && !validationResult.city} invalid={validationResult.validated && validationResult.city} />
+                            <FormFeedback>{validationResult.city}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' placeholder='Código Postal' id='postalCode' name='postalCode' onChange={handleState} valid={validationResult.validated && !validationResult.postalCode} invalid={validationResult.validated && validationResult.postalCode} />
+                            <FormFeedback>{validationResult.postalCode}</FormFeedback>
+                        </FormGroup>
+                        <Button classname= 'btnRegister'color='danger' onClick={()=>sendData()}>REGISTRATE</Button>
+                        <Button classname= 'btnRegister'color='danger' onClick={()=>setTimeout(()=>{history.push('/')},1000)}>VOLVER</Button>
+                    </div>
+                </div>
+                
+            </div> 
+                   <div className="rigthImg">
                 <div className="imgFace">
                     <img className="imgSideFaces" src={imgHulk} alt="hulk"/>
                     <img className="imgSideFaces" src={imgIronman} alt="ironman"/>
@@ -125,7 +164,11 @@ const Register = (props) => {
             </div>         
 
         </div>
+
+        
     )
   
 }
 export default connect()(Register);
+
+                
