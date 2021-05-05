@@ -4,6 +4,7 @@
     justify-content: space-between;
     width: 100%;
     height: 5em;
+    background-color: black;
     
 
     .containerSearchHeader{
@@ -28,4 +29,11 @@
         }
 
     }
+}
+
+.textWelcome{
+    color:white;
+    margin-top: 1.5em;
+    background-color: black;
+
 }
