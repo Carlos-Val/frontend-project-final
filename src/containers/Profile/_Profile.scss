@@ -3,5 +3,30 @@
     width: 100%;
     height: 100vh;
 
-    
+    .containerPhotoForm{
+        display: flex;
+        width: 100%;
+        height: 25em;
+
+
+
+        .photoProfile{
+            width: 30%;
+            height: 100%;
+
+            .containerImg{
+                margin-top: 5em;
+                width: 10em;
+                height: 12em;
+
+            }
+        }
+
+        .formProfile{
+            width: 70%;
+            height: 100%;
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
