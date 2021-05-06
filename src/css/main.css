@@ -135,7 +135,7 @@
   .profileContainer .containerPhotoForm {
     display: flex;
     width: 100%;
-    height: 20em; }
+    height: 18em; }
     .profileContainer .containerPhotoForm .photoProfile {
       width: 30%;
       height: 100%; }
@@ -156,6 +156,38 @@
         .profileContainer .containerPhotoForm .formProfile .modifyForm .form-group {
           width: 20em;
           height: 4em; }
+  .profileContainer .lastPurchases {
+    margin-top: 6em;
+    width: 100%;
+    height: 20em;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .profileContainer .lastPurchases .textLastPurchases {
+      color: white;
+      width: 100%;
+      height: 2em;
+      position: relative;
+      display: inline-block; }
+      .profileContainer .lastPurchases .textLastPurchases .textBanner {
+        margin-top: -3em; }
+      .profileContainer .lastPurchases .textLastPurchases .imgBanner {
+        height: 5em;
+        width: 100%; }
+    .profileContainer .lastPurchases .containerComicPurchases {
+      display: flex;
+      flex-direction: row;
+      margin-top: 3em;
+      width: 100%;
+      height: 20em; }
+      .profileContainer .lastPurchases .containerComicPurchases .imgComicPurchases .imgPurchases {
+        justify-content: center;
+        align-items: center;
+        width: 7em;
+        height: 12em;
+        margin: 1em; }
 
 .containerPrincipal {
   width: 100%;
@@ -248,31 +280,32 @@
         transition: 250ms all;
         filter: saturate(200%); }
 
-.containerHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  height: 5em;
+.header {
   background-color: black; }
-  .containerHeader .containerSearchHeader {
-    width: 25em;
-    height: 5em; }
-  .containerHeader .containerNavbarHeader {
-    width: 8em;
-    height: 5em; }
-  .containerHeader .headerContainerLogo {
-    margin-left: 16.5em;
-    width: 8em;
-    height: 5em; }
-    .containerHeader .headerContainerLogo .logoHeader {
-      width: 100%;
-      height: 100%; }
-
-.textWelcome {
-  color: white;
-  margin-top: 1.5em;
-  background-color: black; }
+  .header .containerHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 5em;
+    background-color: black; }
+    .header .containerHeader .containerSearchHeader {
+      width: 25em;
+      height: 5em; }
+    .header .containerHeader .containerNavbarHeader {
+      width: 8em;
+      height: 5em; }
+    .header .containerHeader .headerContainerLogo {
+      margin-left: 16.5em;
+      width: 8em;
+      height: 5em; }
+      .header .containerHeader .headerContainerLogo .logoHeader {
+        width: 100%;
+        height: 100%; }
+  .header .textWelcome {
+    color: white;
+    margin-top: 1.5em;
+    background-color: black; }
 
 .searchContainer {
   display: flex;

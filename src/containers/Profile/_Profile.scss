@@ -6,7 +6,7 @@
     .containerPhotoForm{
         display: flex;
         width: 100%;
-        height: 20em;
+        height: 18em;
 
         .photoProfile{
             width: 30%;
@@ -38,6 +38,57 @@
                 }
             }
         }
+    }
+
+    .lastPurchases{
+        margin-top: 6em;
+        width: 100%;
+        height: 20em;
+        background-color: $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .textLastPurchases{
+            color: white;
+            width: 100%;
+            height: 2em;
+            position: relative;
+            display: inline-block;
+
+            .textBanner{
+                margin-top: -3em;
+            }
+
+            .imgBanner{
+                height: 5em;
+                width: 100%;
+            }
+
+        }
+        .containerComicPurchases{
+            display:flex;
+            flex-direction: row;
+            margin-top: 3em;
+            width: 100%;
+            height: 20em;
+
+            .imgComicPurchases{
+                
+
+
+                .imgPurchases{
+                    justify-content: center;
+                    align-items: center;
+                    width: 7em;
+                    height: 12em;
+                    margin: 1em;
+                }
+            }
+
+        }
+
     }
 
     

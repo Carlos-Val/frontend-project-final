@@ -6,6 +6,7 @@ import Header from '../../components/header/header';
 import imgProfile from '../../assets/img/imagenperfil.jpg';
 import { Button, FormGroup, Input, FormFeedback, Label } from 'reactstrap';
 import {validateField, validateFields} from '../../tools/error.handlers';
+import banner from '../../assets/img/banner2.jpg'
 
 
 
@@ -162,15 +163,18 @@ const Profile = (props) => {
             </div>
 
             <div className="lastPurchases">
+                <div className="textLastPurchases">
+                    <img className="imgBanner" src={banner} alt="banner"/>
+                    <div className="textBanner">AQUI TIENES, {props.user[0].nickName}, TUS ÚLTIMOS COMICS COMPRADOS!!</div>
+                </div>
                 <div className="containerComicPurchases">
-                    <div className="titleComicPurchases">
-                        {bought.listBought?.map(picture => 
-                            <div>
-                                {picture.titleComic}
-                            </div>)}
-
-                    </div>
-
+                    {bought.listBought?.map(picture => 
+                        <div className="imgComicPurchases">
+                            
+                            <img className="imgPurchases" src={picture.imageComic}/>
+                            
+                        </div>
+                        )}
                 </div>
 
             </div>
