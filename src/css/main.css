@@ -135,19 +135,27 @@
   .profileContainer .containerPhotoForm {
     display: flex;
     width: 100%;
-    height: 25em; }
+    height: 20em; }
     .profileContainer .containerPhotoForm .photoProfile {
       width: 30%;
       height: 100%; }
       .profileContainer .containerPhotoForm .photoProfile .containerImg {
         margin-top: 5em;
         width: 10em;
-        height: 12em; }
+        height: 12em;
+        border-radius: 15%; }
     .profileContainer .containerPhotoForm .formProfile {
       width: 70%;
       height: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr); }
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 4em; }
+      .profileContainer .containerPhotoForm .formProfile .modifyForm {
+        align-items: center;
+        justify-content: center; }
+        .profileContainer .containerPhotoForm .formProfile .modifyForm .form-group {
+          width: 20em;
+          height: 4em; }
 
 .containerPrincipal {
   width: 100%;

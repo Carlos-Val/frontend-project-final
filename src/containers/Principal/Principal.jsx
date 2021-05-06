@@ -62,7 +62,7 @@ const Principal = (props) => {
     const getComic = async (characterId) =>{
         const comicCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
         props.dispatch({type: SHOWCOMIC, payload: comicCollection.data.data});
-        console.log("personajes", comicCollection)
+        
         setComic({
 
             ...comic, comics: comicCollection.data.data
