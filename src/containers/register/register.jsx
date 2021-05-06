@@ -8,7 +8,7 @@ import imgBlack from '../../assets/img/blackpanther.jpg';
 import imgDead from '../../assets/img/deadpool.jpg';
 import imgHulk from '../../assets/img/hulk.jpg';
 import imgSpider from '../../assets/img/spiderman.jpg';
-import logo from '../../assets/img/logo.jpg';
+import logo from '../../assets/img/logo.png';
 
 import {validateField, validateFields} from '../../tools/error.handlers';
 import { Button, FormGroup, Input, FormFeedback } from 'reactstrap';

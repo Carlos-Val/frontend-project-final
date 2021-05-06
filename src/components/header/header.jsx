@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import SearchBox from '../searchBox/searchBox';
 import Navbar from '../../components/navbar/navbar';
-import logo from '../../assets/img/logo.jpg';
+import logo from '../../assets/img/logo.png';
 
 
 const Header = (props) => {
     
     return (
-        <div>
+        <div className="header">
             <div className="containerHeader">
                 <div className="containerNavbarHeader">
                     <Navbar/>
