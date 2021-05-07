@@ -3,6 +3,7 @@ import axios from "axios";
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import Header from '../../components/header/header.jsx';
+import { Button } from 'reactstrap';
 
 
 
@@ -40,12 +41,37 @@ const Buy = (props) => {
                 <Header/>
             </div>
 
-        
-
             <div className="containerShowComic">
-                Titulo: {props.saveComic.title}
-                <img src={`${props.saveComic.thumbnail.path}.${props.saveComic.thumbnail.extension}`} alt="super"/>
-                <button id="buttonLogin" onClick={()=>buyComic()}>Precio: {props.saveComic.prices[0].price} €</button>
+                <div className="dataShowComic">
+                    <div className="titleShowComic">
+                        Titulo: {props.saveComic.title}
+                    </div>
+                    <div className="textShowComic">
+                        <div className="creator">
+                            <div className="containerCreator">
+                                <div className="creatorJob">
+                                    {props.saveComic.creators.items.map(job =>
+                                        <div className="job">{job.role}:</div>)}
+                                </div>
+                                <div className="creatorEmployee">
+                                    {props.saveComic.creators.items.map(employee =>
+                                        <div className="employee">{employee.name}</div>)}
+                                </div>
+
+                            </div>
+                            <Button className="buttonBuy" onClick={()=>buyComic()}>Precio: {props.saveComic.prices[0].price} €</Button>
+                        </div>
+                        <div className="imgShowComic">
+                            <img className="thumbnailShowComic"src={`${props.saveComic.thumbnail.path}.${props.saveComic.thumbnail.extension}`} alt="super"/>
+                        </div>
+                        
+                    </div>
+
+                </div>              
+                {/* <div className="imagesAdd">
+                    {props.saveComic.images.map(picture=>
+                        <img className="imgAdd" src={`${picture.path}.${picture.extension}`} alt="super"/>)}
+                </div> */}
 
 
             </div>
