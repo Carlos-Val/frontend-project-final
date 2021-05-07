@@ -3,7 +3,6 @@ import axios from "axios";
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import { SHOWCOMIC, SHOWCOUNT } from '../../redux/types/comicTypes.js';
-//import { SAVE } from '../../redux/types/saveComicTypes.js';
 import spinner from '../../assets/img/spinner.gif';
 import Carousel from '../../components/carousel/carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -129,14 +128,14 @@ const Principal = (props) => {
                 </div>
                 <div className="containerCharacter">
                     
-                    <div className="getCharacter"><img src={spiderman} onClick={()=>getComic(1009610)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={ironman} onClick={()=>getComic(1009368)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={blackPanther} onClick={()=>getComic(1009187)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={deadpool} onClick={()=>getComic(1009268)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={captainAmerica} onClick={()=>getComic(1017575)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={thor} onClick={()=>getComic(1009664)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={hulk} onClick={()=>getComic(1009351)} className="logoSuper"/></div>
-                    <div className="getCharacter"><img src={avengers} onClick={()=>getComic(1009165)} className="logoSuper"/></div>
+                    <div className="getCharacter"><img src={spiderman} onClick={()=>getComic(1009610)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={ironman} onClick={()=>getComic(1009368)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={blackPanther} onClick={()=>getComic(1009187)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={deadpool} onClick={()=>getComic(1009268)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={captainAmerica} onClick={()=>getComic(1017575)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={thor} onClick={()=>getComic(1009664)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={hulk} onClick={()=>getComic(1009351)} className="logoSuper" alt="super"/></div>
+                    <div className="getCharacter"><img src={avengers} onClick={()=>getComic(1009165)} className="logoSuper" alt="super"/></div>
 
                 </div>
             </div>

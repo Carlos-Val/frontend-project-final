@@ -103,8 +103,8 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="footerHome">
-                <a href='https://www.linkedin.com/in/carlos-val' target="_blank"> <img className="footerLinkedin"src={linkedin} alt="fgd"/></a>
-                <a href='https://github.com/Carlos-Val' target="_blank"><img className="footerGit"src={github} alt="gfds"/></a>
+                <a href='https://www.linkedin.com/in/carlos-val' target="linkedin"> <img className="footerLinkedin"src={linkedin} alt="fgd"/></a>
+                <a href='https://github.com/Carlos-Val' target="github"><img className="footerGit"src={github} alt="gfds"/></a>
                   
 
             </div> 

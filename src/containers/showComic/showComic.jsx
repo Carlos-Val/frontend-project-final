@@ -44,7 +44,7 @@ const Buy = (props) => {
 
             <div className="containerShowComic">
                 Titulo: {props.saveComic.title}
-                <img src={`${props.saveComic.thumbnail.path}.${props.saveComic.thumbnail.extension}`}/>
+                <img src={`${props.saveComic.thumbnail.path}.${props.saveComic.thumbnail.extension}`} alt="super"/>
                 <button id="buttonLogin" onClick={()=>buyComic()}>Precio: {props.saveComic.prices[0].price} €</button>
 
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import axios from "axios";
 import {connect} from 'react-redux';
-import {useHistory} from 'react-router-dom';
 import Header from '../../components/header/header';
 import imgProfile from '../../assets/img/imagenperfil.jpg';
 import { Button, FormGroup, Input, FormFeedback, Label } from 'reactstrap';
@@ -113,9 +112,7 @@ const Profile = (props) => {
             </div>
             <div className="containerPhotoForm">
                 <div className="photoProfile">
-                    {/* <div className="containerImg"> */}
                         <img className="containerImg" src={imgProfile} alt="image"/>
-                    {/* </div>               */}
                 </div>
                 <div className="formProfile">
                     <div className="modifyForm">
@@ -171,7 +168,7 @@ const Profile = (props) => {
                     {bought.listBought?.map(picture => 
                         <div className="imgComicPurchases">
                             
-                            <img className="imgPurchases" src={picture.imageComic}/>
+                            <img className="imgPurchases" src={picture.imageComic} alt="super"/>
                             
                         </div>
                         )}

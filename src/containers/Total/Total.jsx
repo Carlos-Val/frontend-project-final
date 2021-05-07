@@ -34,7 +34,7 @@ const Total = (props) => {
                         <div className="imagesTotal">
                             {props.comic.map(picture => 
                                     <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
-                                        <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`}/>
+                                        <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`} alt="super"/>
                                     </div>
                             )}
                         </div>
@@ -57,7 +57,7 @@ const Total = (props) => {
                         
                         {props.comic?.results.map(picture => 
                             <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
-                                <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`}/>
+                                <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`} alt="super"/>
                             </div>
                             )}
                     </div>
