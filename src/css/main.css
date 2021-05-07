@@ -250,6 +250,18 @@
         justify-content: center;
         align-items: center;
         margin-left: 1em; }
+        .containerShowComic .dataShowComic .textShowComic .containerCreator .creatorJob {
+          margin-bottom: 2em; }
+          .containerShowComic .dataShowComic .textShowComic .containerCreator .creatorJob .job {
+            margin: 0.5em;
+            text-align: right; }
+        .containerShowComic .dataShowComic .textShowComic .containerCreator .creatorEmployee {
+          margin-bottom: 2em; }
+          .containerShowComic .dataShowComic .textShowComic .containerCreator .creatorEmployee .employee {
+            margin: 0.5em;
+            text-align: left; }
+        .containerShowComic .dataShowComic .textShowComic .containerCreator .btnBuy {
+          margin-top: 2em; }
     .containerShowComic .dataShowComic .imgShowComic {
       margin-left: 2em; }
       .containerShowComic .dataShowComic .imgShowComic .thumbnailShowComic {

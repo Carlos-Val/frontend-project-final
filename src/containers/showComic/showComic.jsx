@@ -59,7 +59,9 @@ const Buy = (props) => {
                                 </div>
 
                             </div>
-                            <Button className="buttonBuy" onClick={()=>buyComic()}>Precio: {props.saveComic.prices[0].price} €</Button>
+                            <div className="btnBuy" >
+                                <Button color='danger' onClick={()=>buyComic()}>Precio: {props.saveComic.prices[0].price} €</Button>
+                            </div>
                         </div>
                         <div className="imgShowComic">
                             <img className="thumbnailShowComic"src={`${props.saveComic.thumbnail.path}.${props.saveComic.thumbnail.extension}`} alt="super"/>
@@ -68,10 +70,6 @@ const Buy = (props) => {
                     </div>
 
                 </div>              
-                {/* <div className="imagesAdd">
-                    {props.saveComic.images.map(picture=>
-                        <img className="imgAdd" src={`${picture.path}.${picture.extension}`} alt="super"/>)}
-                </div> */}
 
 
             </div>

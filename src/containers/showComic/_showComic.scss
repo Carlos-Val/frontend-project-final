@@ -32,16 +32,32 @@
                 align-items: center;
                 margin-left: 1em;
                 
+
+
+                    .creatorJob{
+                        margin-bottom: 2em;
+                        .job{
+                            margin: 0.5em;
+                            text-align: right;
+                        }
+                    }
+                    .creatorEmployee{
+                        margin-bottom: 2em;
+                        .employee{
+                            margin: 0.5em;
+                            text-align: left;
+                            
+
+                        }
+                    }
+                    .btnBuy{
+                        margin-top: 2em;
+                    }
                 
-
-                .creatorJob{
-
-                }
-                .creatorEmployee{
-
-                }
+                
+                
             }
-            
+
         }
 
         .imgShowComic{
