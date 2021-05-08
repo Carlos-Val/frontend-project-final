@@ -16,6 +16,7 @@ import thor from '../../assets/img/logothor.png';
 import hulk from '../../assets/img/logohulk.png';
 import avengers from '../../assets/img/logoavengers.png';
 import Header from '../../components/header/header.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
 
 
 //public key: 4ef40f88776b5c1623dbd39d7b611a3f
@@ -138,6 +139,7 @@ const Principal = (props) => {
                     <div className="getCharacter"><img src={hulk} onClick={()=>getComic(1009351)} className="logoSuper" alt="super"/></div>
                     <div className="getCharacter"><img src={avengers} onClick={()=>getComic(1009165)} className="logoSuper" alt="super"/></div>
                 </div>
+                
             </div>
         
         )

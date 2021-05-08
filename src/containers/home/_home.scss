@@ -37,7 +37,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        //background-color: yellow;
 
         
 
@@ -47,27 +46,36 @@
             justify-content: center;
             align-items: center;
             margin-right: $size-g;
-            //margin-top: $size-g;
-            border-radius: 5%;
-            border-style: inset; 
-            width: 90%;
-            height: 16em;
+            //border-radius: 3%;
+            border-style: solid double; 
+            width: 80%;
+            height: 12em;
             background-color: $red;
             -webkit-box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
             -moz-box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
             box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
             
             .containerInputHome{
-                // display: flex;
-                // flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                margin-top: 2em;
                 height: 10em;
-                margin-top: -2em;
+                
+
             }
 
             .containerBtnHome{
-                height: 1em;
+                display: flex;
+                justify-content: flex-start;
+                height: 3em;
+                margin: 2em;
+
+                .btnHomeLogin{
+                    margin-right: 0.5em;
+                }
+                
             }
 
         }

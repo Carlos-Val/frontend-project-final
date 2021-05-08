@@ -88,12 +88,16 @@ const Home = (props) => {
 
                     <div className="formLogin">
                         <div className="containerInputHome">
-                            <Input title="NickName" type="text" placeholder="Nickname" maxLength="10" name="nickName" onChange={handleState}/>
-                            <Input title="Password" type="password" placeholder="Password" name="password" onChange={handleState}/>
+                            <Input type="text" placeholder="Nickname" maxLength="10" name="nickName" onChange={handleState}/>
+                            <Input type="password" placeholder="Password" name="password" onChange={handleState}/>
                         </div>
                         <div className="containerBtnHome">
-                            <Button color="dark" onClick={()=> login()}>Login</Button>{' '}
-                            <Button color="dark" onClick={()=> redirect()}>Regístrate</Button>{' '}   
+                            <div className="btnHomeLogin">
+                                <Button color="dark" onClick={()=> login()}>Login</Button>{' '}
+                            </div>
+                            <div className="btnHomeRegister">
+                                <Button color="dark" onClick={()=> redirect()}>Regístrate</Button>{' '}   
+                            </div>
                         </div>
 
                     </div>

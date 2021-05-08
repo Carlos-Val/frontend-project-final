@@ -12,6 +12,7 @@ import logo from '../../assets/img/logo.png';
 
 import {validateField, validateFields} from '../../tools/error.handlers';
 import { Button, FormGroup, Input, FormFeedback } from 'reactstrap';
+import Footer from "../../components/Footer/Footer";
 
 
 const Register = () => {
@@ -162,7 +163,7 @@ const Register = () => {
                     <img className="imgSideFaces" src={imgSpider} alt="spiderman"/>
                 </div>
             </div>         
-
+            <Footer/>
         </div>
 
         

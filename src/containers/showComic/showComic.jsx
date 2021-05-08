@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import Header from '../../components/header/header.jsx';
 import { Button } from 'reactstrap';
+import Footer from '../../components/Footer/Footer.jsx';
 
 
 
@@ -73,6 +74,7 @@ const Buy = (props) => {
 
 
             </div>
+            <Footer/>
         </div>
     )
 
