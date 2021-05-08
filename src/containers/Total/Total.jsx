@@ -2,6 +2,7 @@ import React from 'react';
 import {SAVE} from '../../redux/types/saveComicTypes.js';
 import { useHistory } from 'react-router-dom';
 import {connect} from 'react-redux';
+import Header from '../../components/header/header.jsx';
 
 
 
@@ -26,16 +27,19 @@ const Total = (props) => {
             <div>
                 <div className="containerTotal">
                     <div className="headerTotal">
-
+                        <Header/>
                     </div>
 
                     <div className="bodyTotal">
-
+                        <div className="textTotal"> El resultado de la busqueda: </div>
                         <div className="imagesTotal">
                             {props.comic.map(picture => 
-                                    <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
-                                        <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`} alt="super"/>
+                                <div className="generalTotal">
+                                    <div onClick={()=>saveComic(picture)} key={picture.id} className="imageTotal">
+                                        <img className="imgTotal" src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`} alt="super"/>
                                     </div>
+                                    <div className="titleTotal">{picture.title}</div>
+                                </div>
                             )}
                         </div>
                     </div>
@@ -49,15 +53,18 @@ const Total = (props) => {
         <div>
             <div className="containerTotal">
                 <div className="headerTotal">
-
+                    <Header/>
                 </div>
                 
                 <div className="bodyTotal">
+                <div className="textTotal"> El resultado es: </div>
                     <div className="imagesTotal">
-                        
-                        {props.comic?.results.map(picture => 
-                            <div onClick={()=>saveComic(picture)} key={picture.id} className="imgTotal">
-                                <img src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`} alt="super"/>
+                        {props.comic?.results.map(picture =>
+                            <div className="generalTotal">
+                                <div onClick={()=>saveComic(picture)} key={picture.id} className="imageTotal">
+                                    <img className="imgTotal"src={`${picture.thumbnail.path}.${picture.thumbnail.extension}`} alt="super"/>
+                                </div>
+                                <div className="titleTotal">{picture.title}</div>
                             </div>
                             )}
                     </div>
