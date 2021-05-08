@@ -86,24 +86,3 @@
     
    
 }
-.footerHome{
-    display: flex;
-    flex-direction: row;
-    background-color: black;
-    width: 100%;
-    height: 3em;
-    justify-content: flex-end;
-    
-    .footerLinkedin{
-        width: 2em;
-        height: 2em;
-        margin-right: 1em;
-        
-    }
-    .footerGit{
-        width: 2em;
-        height: 2em;
-        margin-right: 2em;
-        
-    }
-}

@@ -27,7 +27,17 @@
         }
 
     }
+    .textGetCharacter{
+        display: flex;
+        color:white;
+        width: 100%;
+        height: 3em;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2em;
+        border-top: 0.5em solid rgba(145, 45, 45, 0.849);
 
+            }
     .containerCharacter{
         width: 100%;
         height: 24em;
@@ -36,14 +46,16 @@
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
         align-items: center;
-        border-top: 0.5em solid rgba(145, 45, 45, 0.849);
+        
+
+        
         
 
         .getCharacter{
             display: flex;
             flex-direction: row;
-            width: 8em;
-            height: 8em;
+            width: 6.5em;
+            height: 6.5em;
             border-radius: 100%;
         }
         

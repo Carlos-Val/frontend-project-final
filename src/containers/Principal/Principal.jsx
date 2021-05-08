@@ -126,8 +126,9 @@ const Principal = (props) => {
                    
                     <Carousel/>
                 </div>
+
+                <div className="textGetCharacter">Mira los comics de tus superhéroes favoritos</div>
                 <div className="containerCharacter">
-                    
                     <div className="getCharacter"><img src={spiderman} onClick={()=>getComic(1009610)} className="logoSuper" alt="super"/></div>
                     <div className="getCharacter"><img src={ironman} onClick={()=>getComic(1009368)} className="logoSuper" alt="super"/></div>
                     <div className="getCharacter"><img src={blackPanther} onClick={()=>getComic(1009187)} className="logoSuper" alt="super"/></div>
@@ -136,7 +137,6 @@ const Principal = (props) => {
                     <div className="getCharacter"><img src={thor} onClick={()=>getComic(1009664)} className="logoSuper" alt="super"/></div>
                     <div className="getCharacter"><img src={hulk} onClick={()=>getComic(1009351)} className="logoSuper" alt="super"/></div>
                     <div className="getCharacter"><img src={avengers} onClick={()=>getComic(1009165)} className="logoSuper" alt="super"/></div>
-
                 </div>
             </div>
         
