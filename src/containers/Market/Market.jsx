@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 import {connect} from 'react-redux';
 import { TOTAL_CART, CLEAN, REMOVE } from '../../redux/types/cartTypes'; 
 import { Button } from 'reactstrap';
+import Footer from '../../components/Footer/Footer';
 
 
 
@@ -54,20 +55,13 @@ const Market = (props) => {
         const result = await axios.post('http://127.0.0.1:8000/api/order', body);
 
         props.dispatch({type: REMOVE, payload: index})
-
         
-       
-        
-        // if(result){
-
-        //     alert('Has hecho la compra!! En breve te llegará a casa');
-        //     setTimeout(()=>{
-        //         history.push('/principal')
-        //     },1000);
-
-        // }else{
-        //     alert('No se ha realizado correctamente la compra');
-        // }
+        if(result){
+            alert('Has hecho la compra!! En breve te llegará a casa');
+             setTimeout(()=>{
+                 history.push('/principal')
+             },1000);
+        }
     };
 
 
@@ -78,22 +72,29 @@ const Market = (props) => {
                 <div className="headerMarket">
                     <Header/>
                 </div>
-                <div className="comicsCart">
+                <div className="listComicsCart">
                     {props.cart.map((prod, index) =>{
                         return (
                             <div className="comicsFinalBuy" key={prod.title+ "bfn"}>
                                 <div className="textComicBuy">{prod.title}</div>
-                                <div><img className="imgComicBuy" src={prod.image}/></div>
-                                <div>{prod.price}</div>
-                                <Button color="dark" onClick={()=> buyComic(prod, index)}>Regístrate</Button>
+                                <div className="contImgComicBuy"><img className="imgComicBuy" src={prod.image}/></div>
+                                <div className="priceBuy">{prod.price}€</div>
+                                <Button color="danger" onClick={()=> buyComic(prod, index)}>Comprar</Button>
                             </div>
                         )
                     })}
                 </div>
-                <div className="totalPrice">
-                    El total es de {props.totalCart} €
+                <div className="containerPriceBtn">
+                    <div className="totalPrice">
+                        El total es de {props.totalCart} €
+                    </div>
+                    <div className="btnEmpty">
+                        <Button onClick={()=> emptyCart()}>Vaciar Compra</Button>
+                    </div>
                 </div>
-                <button onClick={()=> emptyCart()}>Vaciar Compra</button>
+
+                <Footer/>
+                
 
 
 

@@ -1,20 +1,20 @@
-.elementoCarrito{
+.elementCart{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items:center;
     margin-right: 2em;
 
-    .imagenCarrito {
-        width: 2em;
-        height: 2em;
+    .iCart {
+        width: 2.2em;
+        height: 2.2em;
     }
 
-    .cantidadCarrito {
+    .cntdadCart {
         font-weight: bold;
-        color: orange;
-        font-size: 0.7em;
-        margin-left: -0.5em;
+        color: red;
+        font-size: 0.9em;
+        margin-left: -0.35em;
         margin-top: 0.4em;
     }
 }
