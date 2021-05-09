@@ -2,6 +2,7 @@
     background-color: $black;
     width: 100%;
     height: 100vh;
+    
 
     .containerPhotoForm{
         display: flex;
@@ -12,11 +13,19 @@
             width: 30%;
             height: 100%;
 
-            .containerImg{
+            .textPhoto{
+                display: flex;
+                height: 2em;
+                color: white;
                 margin-top: 5em;
+                justify-content: center;
+            }
+
+            .containerChangeImage{
                 width: 10em;
                 height: 12em;
                 border-radius: 15%;
+                margin-bottom: 0.5em;
             
             }
         }
@@ -27,14 +36,21 @@
             display:grid;
             grid-template-columns: repeat(2, 1fr);
             margin-top: 4em;
+            color:white;
 
             .modifyForm{
                 align-items: center;
                 justify-content: center;
 
+                .btnProfileUpdate{
+                    margin-top: 2.5em;
+                    margin-right: 3.5em;
+                }
+
                 .form-group{
                     width: 20em;
                     height: 4em;
+                    
                 }
             }
         }

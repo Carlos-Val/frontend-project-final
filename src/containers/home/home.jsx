@@ -60,7 +60,6 @@ const Home = (props) => {
         let endPointUser = 'http://127.0.0.1:8000/api/user/login';
         
         let result = await axios.post(endPointUser, body);
-        console.log("result", result)
         props.dispatch({type: LOGIN, payload: result.data});
 
 

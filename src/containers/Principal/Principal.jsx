@@ -16,7 +16,6 @@ import thor from '../../assets/img/logothor.png';
 import hulk from '../../assets/img/logohulk.png';
 import avengers from '../../assets/img/logoavengers.png';
 import Header from '../../components/header/header.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
 
 
 //public key: 4ef40f88776b5c1623dbd39d7b611a3f
@@ -67,29 +66,29 @@ const Principal = (props) => {
 
             ...comic, comics: comicCollection.data.data
         });
+        console.clear()
 
         return setTimeout(() => {history.push('/total')},100);
     }
 
-     const getList = async (lastComics) => {
-         const listLastCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=${lastComics}&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
-      
-         props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
-        setList({
-            ...list, lists: listLastCollection.data.data
-         })
-      
-     }
-
-     const getListInitial = async () => {
-         const listLastCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=lastWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
-      
-         props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
-        setList({
-            ...list, lists: listLastCollection.data.data
-         })
-      
-     }
+    const getList = async (lastComics) => {
+        const listLastCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=${lastComics}&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
+     
+        props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
+       setList({
+           ...list, lists: listLastCollection.data.data
+        })
+        console.clear()
+    }
+    const getListInitial = async () => {
+        const listLastCollection = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?dateDescriptor=lastWeek&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);
+     
+        props.dispatch({type: SHOWCOUNT, payload: listLastCollection.data.data});
+       setList({
+           ...list, lists: listLastCollection.data.data
+        })
+        console.clear()
+    }
     
         
     if(!props.count?.results){

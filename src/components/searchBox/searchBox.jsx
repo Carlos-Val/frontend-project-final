@@ -18,7 +18,7 @@ const SearchBox = (props) => {
 
     };
 
-    
+     
     const searchEngine = async () => {
         
         const result = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?title=${search.searchBox}&ts=1&apikey=4ef40f88776b5c1623dbd39d7b611a3f&hash=2c50d7a4dc290b8c68573a4ae46682e7`);

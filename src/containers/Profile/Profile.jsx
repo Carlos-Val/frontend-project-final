@@ -11,7 +11,7 @@ import Footer from '../../components/Footer/Footer';
 
 
 const Profile = (props) => {
-    console.log("props", props)
+
     const [bought, setBought] = useState({
         listBought : []
     });
@@ -19,8 +19,8 @@ const Profile = (props) => {
     const userId = props.user[0].id
 
     const bringOrder = async () => {
+        
         let result = await axios.get(`http://127.0.0.1:8000/api/order/${userId}`, { headers: {"Authorization" : `Bearer ${props.user.token}`}});
-        console.log(result, "result")
         setBought({
             ...bought, listBought: result.data
         })
@@ -113,7 +113,11 @@ const Profile = (props) => {
             </div>
             <div className="containerPhotoForm">
                 <div className="photoProfile">
-                        <img className="containerImg" src={imgProfile} alt="image"/>
+                        <div className="textPhoto">Foto de Perfil</div>
+                        <img className="containerChangeImage" src={imgProfile} alt="image"/>
+                        <div className="btnChangePhoto">
+                            <Button color="danger">Cambiar Foto</Button>
+                        </div>
                 </div>
                 <div className="formProfile">
                     <div className="modifyForm">
@@ -154,7 +158,9 @@ const Profile = (props) => {
                             <Input type='text' placeholder={props.user[0].postalCode} id='postalCode' name='postalCode' onChange={handleState} valid={validationResult.validated && !validationResult.postalCode} invalid={validationResult.validated && validationResult.postalCode} />
                             <FormFeedback>{validationResult.postalCode}</FormFeedback>
                         </FormGroup>
-                        <Button color='danger' onClick={() => updateUser()}>UPDATE</Button>
+                        <div className="btnProfileUpdate">
+                            <Button color='danger' onClick={() => updateUser()}>UPDATE</Button>
+                        </div>
                     </div>
                     
                 </div>

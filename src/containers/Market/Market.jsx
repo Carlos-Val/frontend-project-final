@@ -10,7 +10,7 @@ import Footer from '../../components/Footer/Footer';
 
 
 const Market = (props) => {
-    console.log("props market", props)
+
     const history = useHistory();
 
     useEffect(()=>{
@@ -28,7 +28,7 @@ const Market = (props) => {
         props.cart.map(resume=>{
             return priceTotal += (resume.price * resume.inCart);
         })
-        console.log("priceTotal", priceTotal)
+
         props.dispatch({type: TOTAL_CART, payload: priceTotal });
         
     };

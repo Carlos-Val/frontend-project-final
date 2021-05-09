@@ -129,20 +129,30 @@
     .profileContainer .containerPhotoForm .photoProfile {
       width: 30%;
       height: 100%; }
-      .profileContainer .containerPhotoForm .photoProfile .containerImg {
+      .profileContainer .containerPhotoForm .photoProfile .textPhoto {
+        display: flex;
+        height: 2em;
+        color: white;
         margin-top: 5em;
+        justify-content: center; }
+      .profileContainer .containerPhotoForm .photoProfile .containerChangeImage {
         width: 10em;
         height: 12em;
-        border-radius: 15%; }
+        border-radius: 15%;
+        margin-bottom: 0.5em; }
     .profileContainer .containerPhotoForm .formProfile {
       width: 70%;
       height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      margin-top: 4em; }
+      margin-top: 4em;
+      color: white; }
       .profileContainer .containerPhotoForm .formProfile .modifyForm {
         align-items: center;
         justify-content: center; }
+        .profileContainer .containerPhotoForm .formProfile .modifyForm .btnProfileUpdate {
+          margin-top: 2.5em;
+          margin-right: 3.5em; }
         .profileContainer .containerPhotoForm .formProfile .modifyForm .form-group {
           width: 20em;
           height: 4em; }
@@ -269,7 +279,7 @@
 .containerTotal {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 250vh;
   background-color: black;
   flex-direction: column; }
   .containerTotal .headerTotal {
@@ -296,6 +306,10 @@
           width: 8em;
           height: 12em;
           margin: 2em; }
+        .containerTotal .bodyTotal .imagesTotal .generalTotal .imgTotal:hover {
+          transform: scale(1.15);
+          cursor: pointer;
+          transition: 250ms all; }
         .containerTotal .bodyTotal .imagesTotal .generalTotal .titleTotal {
           width: 10em;
           margin: auto;
@@ -441,7 +455,8 @@
   margin-right: 2em; }
   .elementCart .iCart {
     width: 2.2em;
-    height: 2.2em; }
+    height: 2.2em;
+    cursor: pointer; }
   .elementCart .cntdadCart {
     font-weight: bold;
     color: red;

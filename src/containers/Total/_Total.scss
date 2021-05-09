@@ -1,9 +1,10 @@
 .containerTotal{
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 250vh;
     background-color: black;
     flex-direction: column;
+
     .headerTotal{
         width: 100%;
     }
@@ -38,6 +39,11 @@
                     width: 8em;
                     height: 12em;
                     margin: 2em;
+                }
+                .imgTotal:hover{
+                    transform: scale(1.15);
+                    cursor: pointer;
+                    transition: 250ms all;
                 }
                 .titleTotal{
                     width: 10em;

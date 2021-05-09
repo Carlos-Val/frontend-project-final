@@ -9,10 +9,8 @@ import imgDead from '../../assets/img/deadpool.jpg';
 import imgHulk from '../../assets/img/hulk.jpg';
 import imgSpider from '../../assets/img/spiderman.jpg';
 import logo from '../../assets/img/logo.png';
-
 import {validateField, validateFields} from '../../tools/error.handlers';
 import { Button, FormGroup, Input, FormFeedback } from 'reactstrap';
-import Footer from "../../components/Footer/Footer";
 
 
 const Register = () => {
@@ -72,7 +70,6 @@ const Register = () => {
             });
 
             let result = await axios.post('http://localhost:8000/api/user', user);
-            console.log(result, 'esto es result');
 
             if(result){
 
