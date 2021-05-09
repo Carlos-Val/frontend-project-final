@@ -14,11 +14,7 @@ const rentalReducer = (state = initialState, action) => {
       case LOGOUTSAVE :
         return initialState
 
-    //   case RENT: 
-    //   return {
-    //     ...state, 
-    //     saveComic: action.payload
-    //   }
+    
     default:
           return state;
     };
