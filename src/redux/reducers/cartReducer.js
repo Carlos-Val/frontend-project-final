@@ -1,4 +1,4 @@
-import {ADD, REMOVE, CLEAN, TOTAL_CART} from '../types/cartType.js';
+import {ADD, REMOVE, CLEAN, TOTAL_CART, LOGOUTCART} from '../types/cartTypes.js';
 
 const initialState = {
     cart : [],
@@ -20,22 +20,9 @@ const cartReducer = (state = initialState, action) => {
                 cart : action.payload
             }
 
-        // case EDIT:
-		
-        //     let newCart = state.cart.map( (_x) => {
-                
-        //         if (_x.title === action.payload.title) { // si ya existe
-        //             _x.inCart = action.payload.nuevaCantidad; // lo modifico
-        //         };
-                
-        //         return _x;
-                
-        //     });
+        case LOGOUTCART :
+            return initialState
         
-        return {
-            ...state,
-            cart: newCart,
-        };
 
         case CLEAN : 
             return {

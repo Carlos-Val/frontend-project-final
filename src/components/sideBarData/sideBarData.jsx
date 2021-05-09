@@ -17,7 +17,7 @@ import React from 'react';
     cName: 'nav-text'
    },
    {
-     path: '/user-movie',
+     path: '/market',
      icon: <FaIcons.FaCartPlus />,
      cName: 'nav-text'
    },

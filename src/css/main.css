@@ -381,6 +381,22 @@
     width: 20em;
     border-radius: 0.5em; }
 
+.elementoCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2em; }
+  .elementoCarrito .imagenCarrito {
+    width: 2em;
+    height: 2em; }
+  .elementoCarrito .cantidadCarrito {
+    font-weight: bold;
+    color: orange;
+    font-size: 0.7em;
+    margin-left: -0.5em;
+    margin-top: 0.4em; }
+
 .generalFooter {
   display: flex;
   flex-direction: row;

@@ -1,6 +1,7 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Home from './containers/Home/Home';
+import Market from './containers/Market/Market';
 import Principal from './containers/Principal/Principal';
 import Profile from './containers/Profile/Profile';
 import Register from './containers/Register/Register';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/principal' exact component={Principal}/>
           <Route path='/show-comic' exact component={showComic}/>
           <Route path='/total' exact component={Total}/>
+          <Route path='/market' exact component={Market}/>
 
 
 

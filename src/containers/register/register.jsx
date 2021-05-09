@@ -162,8 +162,7 @@ const Register = () => {
                     <img className="imgSideFaces" src={imgIronman} alt="ironman"/>
                     <img className="imgSideFaces" src={imgSpider} alt="spiderman"/>
                 </div>
-            </div>         
-            <Footer/>
+            </div>        
         </div>
 
         

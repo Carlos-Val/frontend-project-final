@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import * as FaIcons from 'react-icons/fa';
-
 import {Link} from 'react-router-dom';
 import {SideBarData} from '../sideBarData/sideBarData';
 import './navbar.css';
@@ -11,6 +10,7 @@ import {LOGOUT} from '../../redux/types/userTypes';
 import {useHistory} from 'react-router-dom';
 import { LOGOUTCOMIC } from '../../redux/types/comicTypes';
 import { LOGOUTSAVE } from '../../redux/types/saveComicTypes';
+import { LOGOUTCART } from '../../redux/types/cartTypes';
 
 
 function Navbar(props) {
@@ -25,6 +25,7 @@ function Navbar(props) {
        props.dispatch({type: LOGOUT, payload : {}});
        props.dispatch({type: LOGOUTSAVE, payload : {}});
        props.dispatch({type: LOGOUTCOMIC, payload : {}});
+       props.dispatch({type: LOGOUTCART, payload : {}});
  
        setTimeout(()=> {
            history.push('/');

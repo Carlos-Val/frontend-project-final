@@ -3,9 +3,20 @@ import {connect} from 'react-redux';
 import SearchBox from '../searchBox/searchBox';
 import Navbar from '../../components/navbar/navbar';
 import logo from '../../assets/img/logo.png';
+import Cart from '../Cart/Cart';
+import { useHistory } from 'react-router';
 
 
 const Header = (props) => {
+
+    let history = useHistory();
+
+
+    const takeMeToNext = (destino) => {
+        setTimeout(()=>{
+            history.push(`/${destino}`);
+        },500);
+    }
     
     return (
         <div className="header">
@@ -18,6 +29,9 @@ const Header = (props) => {
                 </div>
                 <div className="containerSearchHeader">
                     <SearchBox/>
+                </div>
+                <div className="containerCart">
+                <div onClick={()=> takeMeToNext('market')}><Cart/></div>
                 </div>
                 
 
