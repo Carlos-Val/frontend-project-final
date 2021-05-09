@@ -15,7 +15,6 @@
         .containerSearchHeader{
             width: 25em;
             height: 5em;
-
         }
 
         .containerNavbarHeader{
@@ -32,14 +31,29 @@
                 width: 100%;
                 height: 100%;
             }
-
         }
     }
 
-    .textWelcome{
-        color:white;
-        margin-top: 1.5em;
-        background-color: black;
+    .containerWelcomeCart{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
 
+        .textWelcome{
+            display: flex;
+            color:white;
+            justify-content: flex-start;
+            width: 100%;
+            margin-left: 6em;
+        }
+        .containerCart{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0.5em;
+        }
     }
+
+    
 } 

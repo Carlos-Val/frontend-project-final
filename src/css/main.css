@@ -365,10 +365,22 @@
       .header .containerHeader .headerContainerLogo .logoHeader {
         width: 100%;
         height: 100%; }
-  .header .textWelcome {
-    color: white;
-    margin-top: 1.5em;
-    background-color: black; }
+  .header .containerWelcomeCart {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center; }
+    .header .containerWelcomeCart .textWelcome {
+      display: flex;
+      color: white;
+      justify-content: flex-start;
+      width: 100%;
+      margin-left: 6em; }
+    .header .containerWelcomeCart .containerCart {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.5em; }
 
 .searchContainer {
   display: flex;

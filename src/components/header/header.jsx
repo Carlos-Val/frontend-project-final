@@ -30,15 +30,18 @@ const Header = (props) => {
                 <div className="containerSearchHeader">
                     <SearchBox/>
                 </div>
-                <div className="containerCart">
-                <div onClick={()=> takeMeToNext('market')}><Cart/></div>
-                </div>
                 
 
             </div>
-            <div className="textWelcome">
+            <div className="containerWelcomeCart">
+                <div className="textWelcome">
                     Hola, {props.user[0].nickName}!!
+                </div>
+                <div className="containerCart">
+                <div onClick={()=> takeMeToNext('market')}><Cart/></div>
+                </div>
             </div>
+            
             
             
         </div>

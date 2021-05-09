@@ -26,7 +26,6 @@ const SearchBox = (props) => {
         const arraySearch = result.data.data.results.filter(explore => 
             explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
         )
-        console.log("buscador", arraySearch);
         props.dispatch({type: SEARCH, payload: arraySearch})
         
 
@@ -35,13 +34,6 @@ const SearchBox = (props) => {
         });
 
         
-        // props.dispatch({type: SHOWCOMIC, payload: comicCollection.data.data});
-
-        // setComic({
-
-        //     ...comic, comics: comicCollection.data.data
-        // });
-
         return setTimeout(() => {history.push('/total')},100);
     }
 

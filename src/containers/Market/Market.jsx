@@ -3,7 +3,8 @@ import Header from '../../components/header/header';
 import axios from "axios";
 import { useHistory } from 'react-router';
 import {connect} from 'react-redux';
-import { TOTAL_CART, CLEAN } from '../../redux/types/cartTypes'; 
+import { TOTAL_CART, CLEAN, REMOVE } from '../../redux/types/cartTypes'; 
+import { Button } from 'reactstrap';
 
 
 
@@ -39,61 +40,35 @@ const Market = (props) => {
         
     };
 
-    // const changeQuantity = (operation, product) => {
-    //     if(operation === "more"){
-
-    //         //Incremento la cantidad y guardo en RDX
-		
-
-    //         props.dispatch({type: EDIT, 
-            
-    //             payload: {
-	// 			title: product.title,
-	// 			newQuantity: product.inCart + 1
-    //             }
-	// 		})
-
-    //     }else{
-
-    //         //Decremento la cantidad y guardo en RDX
-
-    //         props.dispatch({type: EDIT, 
-            
-    //             payload: {
-    //             title: product.title,
-    //             newQuantity: product.inCart - 1
-    //             }
-	// 		})
-
-    //     };
-    // };
 
     
+    const buyComic = async (prod, index) => {
 
+        let body = {
+            titleComic: prod.title,
+            imageComic: prod.image,
+            price: prod.price,
+            iduser: props.user[0].id,
+        }
 
+        const result = await axios.post('http://127.0.0.1:8000/api/order', body);
 
-    
+        props.dispatch({type: REMOVE, payload: index})
 
-    // let body = {
-    //     titleComic: props.saveComic.title,
-    //     imageComic: `${props.saveComic.thumbnail.path}.${props.saveComic.thumbnail.extension}`,
-    //     price: props.saveComic.prices[0].price,
-    //     iduser: props.user[0].id,
-    // }
-    
-    // const buyComic = async () => {
-    //     const result = await axios.post('http://127.0.0.1:8000/api/order', body)
         
+       
+        
+        // if(result){
 
-    //     if(result){
-    //         alert('Has hecho la compra!! En breve te llegará a casa');
-    //         setTimeout(()=>{
-    //             history.push('/principal')
-    //         },1000);
-    //     }else{
-    //         alert('No se ha realizado correctamente la compra');
-    //     }
-    // };
+        //     alert('Has hecho la compra!! En breve te llegará a casa');
+        //     setTimeout(()=>{
+        //         history.push('/principal')
+        //     },1000);
+
+        // }else{
+        //     alert('No se ha realizado correctamente la compra');
+        // }
+    };
 
 
 
@@ -104,17 +79,13 @@ const Market = (props) => {
                     <Header/>
                 </div>
                 <div className="comicsCart">
-                    {props.cart.map(prod =>{
+                    {props.cart.map((prod, index) =>{
                         return (
                             <div className="comicsFinalBuy" key={prod.title+ "bfn"}>
                                 <div className="textComicBuy">{prod.title}</div>
                                 <div><img className="imgComicBuy" src={prod.image}/></div>
                                 <div>{prod.price}</div>
-                                {/* <button></button> */}
-                                {/* <div className="btnTrolley">
-                                    <button onClick={()=>changeQuantity("less", prod)}>-</button>
-                                </div> */}
-
+                                <Button color="dark" onClick={()=> buyComic(prod, index)}>Regístrate</Button>
                             </div>
                         )
                     })}

@@ -13,13 +13,16 @@ const cartReducer = (state = initialState, action) => {
 
                 cart: [...state.cart, action.payload]
             }
-        
-        case REMOVE : 
+        case REMOVE:
+            const numIndex = parseInt(action.payload)
             return {
                 ...state,
-                cart : action.payload
+                cart: [
+                    ...state.cart.slice(0, numIndex),
+                    ...state.cart.slice(numIndex + 1)
+                ]
             }
-
+        
         case LOGOUTCART :
             return initialState
         
