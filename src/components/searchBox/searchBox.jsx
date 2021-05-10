@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router';
 import {SEARCH} from '../../redux/types/comicTypes.js';
+import { Button } from 'reactstrap';
 
 const SearchBox = (props) => {
 
@@ -45,7 +46,7 @@ const SearchBox = (props) => {
         <div className="searchContainer">
 
             <input className="searchBox" type="search" name="searchBox" placeholder="Buscar" onKeyUp={stateHandler} onKeyDown={handleOnKeyDown}/>
-            <button type="submit" className="" onClick={()=> searchEngine()}>Buscar</button>
+            <Button color="danger" type="submit"  onClick={()=> searchEngine()}>Buscar</Button>
 
         </div>
     )
