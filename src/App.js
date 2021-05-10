@@ -1,5 +1,6 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Forum from './containers/Forum/Forum';
 import Help from './containers/Help/Help';
 import Home from './containers/Home/Home';
 import Market from './containers/Market/Market';
@@ -27,6 +28,7 @@ function App() {
           <Route path='/total' exact component={Total}/>
           <Route path='/market' exact component={Market}/>
           <Route path='/help' exact component={Help}/>
+          <Route path='/forum' exact component={Forum}/>
 
 
 

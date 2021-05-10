@@ -59,7 +59,7 @@
         justify-content: flex-start;
         align-items: center;
         margin-top: 2em;
-        height: 10em; }
+        height: 8.5em; }
       .homeContainer .textForRegisterContainer .formLogin .containerBtnHome {
         display: flex;
         justify-content: flex-start;
@@ -392,6 +392,20 @@
     width: 8em;
     border-radius: 50%;
     margin-top: -1em; }
+
+.containerForum {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: black; }
+  .containerForum .textForum {
+    color: white;
+    margin-top: 2em; }
+  .containerForum .containerBody {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .titleInput {
   margin-bottom: 0.5em; }
