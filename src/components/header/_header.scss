@@ -48,10 +48,22 @@
             width: 100%;
             margin-left: 6em;
         }
-        .containerCart{
+        .containerForumCart{
             display: flex;
+            flex-direction: row;
             justify-content: flex-end;
             margin-bottom: 0.5em;
+
+            .goViewForum {
+                margin-right: 1em;
+                margin-top: 0.8em;
+                a{
+                    color:white !important;
+
+                }
+            }
+
+
         }
     }
 

@@ -11,9 +11,6 @@ const Forum = () => {
                     <Header/>
                 </div>
 
-                <div className="textForum">
-                    ¡¡EN CONSTRUCCIÓN!!
-                </div>
 
                 <div className="containerBody">
                     <div className="bodyForum">
@@ -21,6 +18,9 @@ const Forum = () => {
                     </div>
                 </div>
                 
+                <div className="textForum">
+                    ¡¡EN CONSTRUCCIÓN!!
+                </div>
             </div>
         </div>
     )

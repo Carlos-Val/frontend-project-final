@@ -37,9 +37,15 @@ const Header = (props) => {
                 <div className="textWelcome">
                     Hola, {props.user[0]?.nickName}!!
                 </div>
-                <div className="containerCart">
-                <div onClick={()=> takeMeToNext('market')}><Cart/></div>
+                <div className="containerForumCart">
+                    <div className="goViewForum">
+                        <a href='/forum' target="_blank">Foros</a>
+                    </div>
+                    <div className="containerCart">
+                        <div onClick={()=> takeMeToNext('market')}><Cart/></div>
+                    </div>
                 </div>
+                
             </div>
             
             

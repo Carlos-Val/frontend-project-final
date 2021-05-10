@@ -400,8 +400,7 @@
   height: 100vh;
   background-color: black; }
   .containerForum .textForum {
-    color: white;
-    margin-top: 2em; }
+    color: white; }
   .containerForum .containerBody {
     display: flex;
     justify-content: center;
@@ -482,10 +481,16 @@
       justify-content: flex-start;
       width: 100%;
       margin-left: 6em; }
-    .header .containerWelcomeCart .containerCart {
+    .header .containerWelcomeCart .containerForumCart {
       display: flex;
+      flex-direction: row;
       justify-content: flex-end;
       margin-bottom: 0.5em; }
+      .header .containerWelcomeCart .containerForumCart .goViewForum {
+        margin-right: 1em;
+        margin-top: 0.8em; }
+        .header .containerWelcomeCart .containerForumCart .goViewForum a {
+          color: white !important; }
 
 .searchContainer {
   display: flex;
