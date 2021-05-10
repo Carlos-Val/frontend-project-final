@@ -18,7 +18,7 @@ const Profile = (props) => {
         listBought : []
     });
 
-    const userId = props.user[0].id
+    const userId = props.user[0]?.id
 
     const bringOrder = async () => {
         

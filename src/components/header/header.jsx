@@ -35,7 +35,7 @@ const Header = (props) => {
             </div>
             <div className="containerWelcomeCart">
                 <div className="textWelcome">
-                    Hola, {props.user[0]?.nickName}!!
+                    Hola, {props.user?.nickName}!!
                 </div>
                 <div className="containerForumCart">
                     <div className="goViewForum">
