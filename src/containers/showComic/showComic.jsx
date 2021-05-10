@@ -9,7 +9,7 @@ import {ADD} from '../../redux/types/cartTypes';
 
 
 const Buy = (props) => {
-    console.log(props, "props")
+    
     const history = useHistory();
 
     const [msgError, setMsgError] = useState('');
@@ -63,11 +63,11 @@ const Buy = (props) => {
                             <div className="containerCreator">
                                 <div className="creatorJob">
                                     {props.saveComic.creators.items.map(job =>
-                                        <div className="job">{job.role}:</div>)}
+                                        <div className="job" key={job.role+ "bfn"}>{job.role}:</div>)}
                                 </div>
                                 <div className="creatorEmployee">
                                     {props.saveComic.creators.items.map(employee =>
-                                        <div className="employee">{employee.name}</div>)}
+                                        <div className="employee" key={employee.name+ "bfn"}>{employee.name}</div>)}
                                 </div>
 
                             </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Input } from 'reactstrap';
 import axios from "axios";
 import {useHistory} from 'react-router-dom';

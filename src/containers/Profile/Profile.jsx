@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import axios from "axios";
 import {connect} from 'react-redux';
 import Header from '../../components/header/header';
-import imgProfile from '../../assets/img/imagenperfil.jpg';
+import iProfile from '../../assets/img/imagenperfil.jpg';
 import { Button, FormGroup, Input, FormFeedback, Label } from 'reactstrap';
 import {validateField, validateFields} from '../../tools/error.handlers';
 import { useHistory } from 'react-router-dom';
@@ -121,7 +121,7 @@ const Profile = (props) => {
             <div className="containerPhotoForm">
                 <div className="photoProfile">
                         <div className="textPhoto">Foto de Perfil</div>
-                        <img className="containerChangeImage" src={imgProfile} alt="image"/>
+                            <img className="containerChangeImage" src={iProfile} alt="image"/>
                         <div className="btnChangePhoto">
                             <Button color="danger">Cambiar Foto</Button>
                         </div>

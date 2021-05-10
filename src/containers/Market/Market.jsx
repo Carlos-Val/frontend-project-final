@@ -77,7 +77,7 @@ const Market = (props) => {
                         return (
                             <div className="comicsFinalBuy" key={prod.title+ "bfn"}>
                                 <div className="textComicBuy">{prod.title}</div>
-                                <div className="contImgComicBuy"><img className="imgComicBuy" src={prod.image}/></div>
+                                <div className="contImgComicBuy"><img className="imgComicBuy" src={prod.image} alt="alt"/></div>
                                 <div className="priceBuy">{prod.price}€</div>
                                 <Button color="danger" onClick={()=> buyComic(prod, index)}>Comprar</Button>
                             </div>

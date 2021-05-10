@@ -12,7 +12,7 @@ const Cart = (props) => {
     return(
     
         <div className="elementCart">
-            <img className="iCart" src={carrito}/><div className="cntdadCart">{totalElementsCart}</div>
+            <img className="iCart" src={carrito} alt="alt"/><div className="cntdadCart">{totalElementsCart}</div>
         </div>
     
     )

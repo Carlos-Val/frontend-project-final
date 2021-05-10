@@ -60,7 +60,7 @@ const isEmail = (inputValue) => {
     }
 }
 const isPassword = (inputValue) => {
-    if(! /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(inputValue)){
+    if(! /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])(?=.{8,})/.test(inputValue)){
         return 'La contraseña debe contener al menos 8 caracteres, mayúscula, minúscula, números y algún caracter especial.';
     }
 }
@@ -72,7 +72,7 @@ const isDni = (inputValue) => {
 } 
 
 const isAddress = (inputValue) => {
-    if(! /^[A-Za-z0-9'\.\-\s\,]/.test(inputValue)){
+    if(! /^[A-Za-z0-9'\-\s]/.test(inputValue)){
         return 'La dirección introducida no es correcta.'
     }
 }
