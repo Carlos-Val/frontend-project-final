@@ -1,11 +1,24 @@
 /*Colors*/
 /*Sizes*/
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
 .homeContainer {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
-  background-color: black; }
+  background-color: black;
+  font-family: 'Comic Neue', cursive; }
   .homeContainer .imageContainer {
     width: 60%;
     height: 100%;
@@ -38,8 +51,8 @@
       justify-content: flex-end;
       align-items: center;
       margin-right: 3.5em;
-      width: 80%;
-      height: 12em;
+      width: 60%;
+      height: 13em;
       background-color: #e60000;
       -webkit-box-shadow: 25px 18px 13px -4px #c78787;
       -moz-box-shadow: 25px 18px 13px -4px #c78787;
@@ -60,6 +73,10 @@
         align-items: center;
         margin-top: 2em;
         height: 8.5em; }
+        .homeContainer .textForRegisterContainer .formLogin .containerInputHome .form-control {
+          width: 15em; }
+        .homeContainer .textForRegisterContainer .formLogin .containerInputHome .btnHomeNickname {
+          margin-bottom: 0.5em; }
       .homeContainer .textForRegisterContainer .formLogin .containerBtnHome {
         display: flex;
         justify-content: flex-start;
@@ -67,12 +84,6 @@
         margin: 2em; }
         .homeContainer .textForRegisterContainer .formLogin .containerBtnHome .btnHomeLogin {
           margin-right: 0.5em; }
-    .homeContainer .textForRegisterContainer .menssageError {
-      height: 3em;
-      margin-right: 3.5em;
-      color: #e60000;
-      margin-top: 1.5em;
-      size: #e60000; }
 
 .viewRegister {
   width: 100%;
@@ -80,7 +91,8 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  background-color: black; }
+  background-color: black;
+  font-family: 'Comic Neue', cursive; }
   .viewRegister .leftImg {
     display: flex;
     flex-direction: column;
@@ -129,7 +141,8 @@
 .profileContainer {
   background-color: black;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  font-family: 'Comic Neue', cursive; }
   .profileContainer .containerPhotoForm {
     display: flex;
     width: 100%;
@@ -174,27 +187,27 @@
     align-items: center;
     flex-direction: column; }
     .profileContainer .lastPurchases .textLastPurchases {
-      color: red;
+      background-color: white;
+      color: black;
       width: 100%;
-      height: 2em;
-      margin-top: 9em;
+      height: 5em;
+      margin-top: 7em;
       position: relative;
-      display: inline-block; }
-      .profileContainer .lastPurchases .textLastPurchases .textBanner {
-        margin-top: -3em; }
-      .profileContainer .lastPurchases .textLastPurchases .imgBanner {
-        height: 5em;
-        width: 100%; }
+      display: inline-block;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.2em; }
     .profileContainer .lastPurchases .textReadComic {
-      margin-top: 5em;
+      margin-top: 2em;
       color: white; }
     .profileContainer .lastPurchases .containerComicPurchases {
       display: flex;
       flex-direction: row;
+      justify-content: center;
       width: 100%;
       height: 20em;
       background-color: black; }
       .profileContainer .lastPurchases .containerComicPurchases .imgComicPurchases .imgPurchases {
+        cursor: pointer;
         justify-content: center;
         align-items: center;
         width: 8em;
@@ -202,6 +215,7 @@
         margin: 1em; }
 
 .containerPrincipal {
+  font-family: 'Comic Neue', cursive;
   width: 100%;
   height: 100%;
   display: flex;
@@ -223,7 +237,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 2em;
-    border-top: 0.5em solid rgba(145, 45, 45, 0.849); }
+    border-top: 0.25em solid rgba(145, 45, 45, 0.849);
+    font-size: 2em; }
   .containerPrincipal .containerCharacter {
     width: 100%;
     height: 24em;
@@ -252,7 +267,8 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: white; }
+  color: white;
+  font-family: 'Comic Neue', cursive; }
   .containerShowComic .dataShowComic {
     margin-top: 2em; }
     .containerShowComic .dataShowComic .textShowComic {
@@ -263,7 +279,8 @@
       align-items: center; }
       .containerShowComic .dataShowComic .textShowComic .titleShowComic {
         margin-top: -4em;
-        color: black; }
+        color: black;
+        font-size: 1.5em; }
       .containerShowComic .dataShowComic .textShowComic .containerCreator {
         display: flex;
         flex-direction: row;
@@ -293,12 +310,15 @@
   width: 100%;
   height: 250vh;
   background-color: black;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: 'Comic Neue', cursive; }
   .containerTotal .headerTotal {
     width: 100%; }
   .containerTotal .bodyTotal {
     margin-top: 4em;
     color: white; }
+    .containerTotal .bodyTotal .textTotal {
+      font-size: 1.6em; }
     .containerTotal .bodyTotal .imagesTotal {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -334,7 +354,8 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: white; }
+  color: white;
+  font-family: 'Comic Neue', cursive; }
   .containerMarket .listComicsCart {
     display: flex;
     flex-direction: row;
@@ -373,7 +394,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: black; }
+  background-color: black;
+  font-family: 'Comic Neue', cursive; }
   .containerHelp .textHelp {
     width: 100%;
     height: 25em;
@@ -402,7 +424,8 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: black; }
+  background-color: black;
+  font-family: 'Comic Neue', cursive; }
   .containerForum .textForum {
     color: white; }
   .containerForum .containerBody {
@@ -415,7 +438,8 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: black; }
+  background-color: black;
+  font-family: 'Comic Neue', cursive; }
   .containerRead .textRead {
     color: white; }
   .containerRead .containerBodyRead {
@@ -465,7 +489,8 @@
 
 .header {
   background-color: black;
-  border-bottom: 0.5em solid rgba(145, 45, 45, 0.849); }
+  border-bottom: 0.5em solid rgba(145, 45, 45, 0.849);
+  font-family: 'Comic Neue', cursive; }
   .header .containerHeader {
     display: flex;
     flex-direction: row;
@@ -497,7 +522,8 @@
       color: white;
       justify-content: flex-start;
       width: 100%;
-      margin-left: 6em; }
+      margin-left: 6em;
+      font-size: 1.2em; }
     .header .containerWelcomeCart .containerForumCart {
       display: flex;
       flex-direction: row;
@@ -505,7 +531,8 @@
       margin-bottom: 0.5em; }
       .header .containerWelcomeCart .containerForumCart .goViewForum {
         margin-right: 1em;
-        margin-top: 0.8em; }
+        margin-top: 0.8em;
+        font-size: 1.2em; }
         .header .containerWelcomeCart .containerForumCart .goViewForum a {
           color: white !important; }
 

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 .containerHelp{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     background-color: black;
+    font-family: 'Comic Neue', cursive;
 
     .textHelp{
         width: 100%;

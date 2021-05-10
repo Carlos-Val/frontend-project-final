@@ -39,7 +39,7 @@ const Header = (props) => {
                 </div>
                 <div className="containerForumCart">
                     <div className="goViewForum">
-                        <a href='/forum' target="_blank">Foros</a>
+                        <a href='/forum'>Foros</a>
                     </div>
                     <div className="containerCart">
                         <div onClick={()=> takeMeToNext('market')}><Cart/></div>

@@ -1,6 +1,9 @@
- .header{
-     background-color: $black;
-     border-bottom: 0.5em solid rgba(145, 45, 45, 0.849);
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+.header{
+    background-color: $black;
+    border-bottom: 0.5em solid rgba(145, 45, 45, 0.849);
+    font-family: 'Comic Neue', cursive;
 
   
     .containerHeader{
@@ -47,6 +50,7 @@
             justify-content: flex-start;
             width: 100%;
             margin-left: 6em;
+            font-size: 1.2em;
         }
         .containerForumCart{
             display: flex;
@@ -57,6 +61,7 @@
             .goViewForum {
                 margin-right: 1em;
                 margin-top: 0.8em;
+                font-size: 1.2em;
                 a{
                     color:white !important;
 

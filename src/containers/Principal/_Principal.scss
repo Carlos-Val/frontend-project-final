@@ -1,15 +1,12 @@
-.containerPrincipal{
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
+.containerPrincipal{
+    font-family: 'Comic Neue', cursive;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     background-color: $black;
-
-    // .headerPrincipal{
-    //     position: fixed;
-    // }
-    
    
 
     .containerCarousel{
@@ -35,7 +32,8 @@
         align-items: center;
         justify-content: center;
         margin-top: 2em;
-        border-top: 0.5em solid rgba(145, 45, 45, 0.849);
+        border-top: 0.25em solid rgba(145, 45, 45, 0.849);
+        font-size: 2em;
 
             }
     .containerCharacter{

@@ -49,7 +49,7 @@ const Market = (props) => {
             titleComic: prod.title,
             imageComic: prod.image,
             price: prod.price,
-            iduser: props.user[0].id,
+            iduser: props.user.id,
         }
 
         const result = await axios.post('http://127.0.0.1:8000/api/order', body);

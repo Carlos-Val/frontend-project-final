@@ -32,13 +32,7 @@ const Home = (props) => {
         });
         setLogin({...dataLogin, [event.target.name]: event.target.value});
 
-        //
-        // setValidationResult({
-        //     //
-        //     ...validationResult,
-        //     //
-        //     [event.target.name]: validateField(event.target.name, event.target.value)
-        // });
+       
     };
 
     const login = async () => {
@@ -51,10 +45,7 @@ const Home = (props) => {
             validated: true
         });
 
-        // if(!isValid(validationResult)){
-        //     return;
-
-        // }
+       
         let body ={
             nickName: dataLogin.nickName,
             password: dataLogin.password
@@ -65,7 +56,9 @@ const Home = (props) => {
 
         if(result.data.error){
             alert('Nombre de usuario o contraseña incorrectos');
-            
+            setTimeout(() => {
+                history.push('/');
+            }, 500)
         } else {
             alert('Usuario logueado con éxito');
             setTimeout(() => {
@@ -74,18 +67,6 @@ const Home = (props) => {
         }
 
 
-        // try {
-        //     let result = await axios.post('http://127.0.0.1:8000/api/user/login', dataLogin);
-               
-        //     props.dispatch({type: LOGIN, payload: result.data});
-
-        //     return history.push('/principal');
-                                
-        // } catch (error) {
-        //     if(error.isAxiosError & error.response?.status === 403){
-        //         alert('El usuario no existe');  
-        //     }
-        // }
     };
 
     const redirect = () => {
@@ -113,7 +94,9 @@ const Home = (props) => {
                             <img className="logoHome" src={logo} alt="logo"/>
                         </div>
                         <div className="containerInputHome">
-                            <Input type="text" placeholder="Nickname" maxLength="18" name="nickName" onChange={handleState} valid={validationResult.validated && !validationResult.nickName} invalid={validationResult.validated && validationResult.nickName}/>
+                            <div className="btnHomeNickname">
+                                <Input type="text" placeholder="Nickname" maxLength="18" name="nickName" onChange={handleState} valid={validationResult.validated && !validationResult.nickName} invalid={validationResult.validated && validationResult.nickName}/>
+                            </div>
                             <Input type="password" placeholder="Password" name="password" onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password}/>
                         </div>
                         <div className="containerBtnHome">
@@ -126,7 +109,6 @@ const Home = (props) => {
                         </div>
 
                     </div>
-                    {/* <div className="menssageError">{message}</div> */}
 
                 </div>
             </div>
@@ -140,62 +122,3 @@ const Home = (props) => {
 export default connect()(Home);
 
 
-// let history = useHistory();
-
-  
-
-//     const [dataLogin, setLogin] = useState({
-//         nickName : "",
-//         password : ""
-//     });
-
-//     const [message, setMessage] = useState("");
-
-
-//     //USEeFFECTS
-//     useEffect(()=>{
-
-//     },[]);
-
-//     //HANDLERS
-//     const handleState = (ev) => {
-//         setLogin({...dataLogin,[ev.target.name]: ev.target.type === 'number' ? +ev.target.value : ev.target.value});
-//     }
-
-
-    
-//     const login = async () => {
-
-//         //COMPROBACION DE ERRORES
-//         setMessage("");
-
-//         let messageError = checkError(dataLogin);
-
-//         setMessage(messageError);
-
-//         if(messageError){
-//             return;
-//         };
-
-//         //LO QUE ENVIAMOS AL BACKEND
-
-//         let body = {
-//             nickName : dataLogin.nickName,
-//             password : dataLogin.password
-//         }
-//         let endPointUser = 'http://127.0.0.1:8000/api/user/login';
-        
-//         let result = await axios.post(endPointUser, body);
-
-//         props.dispatch({type: LOGIN, payload: result.data});
-
-
-//         if(!result.data.jwt?.error){
-//             setTimeout(()=>{
-//                 history.push('/principal');
-//             },500);
-//         }else{
-//             setMessage(result.data.jwt?.error);
-//             alert('Nombre de usuario o contraseña incorrectos');
-//         }
-//     };

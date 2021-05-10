@@ -9,7 +9,7 @@ import {ADD} from '../../redux/types/cartTypes';
 
 
 const Buy = (props) => {
-
+    console.log(props, "props")
     const history = useHistory();
 
     const [msgError, setMsgError] = useState('');
@@ -45,15 +45,6 @@ const Buy = (props) => {
             history.push('/principal')
           }, 1000)
     }
-
-   
-    // const redirect = () => {
-    //     return setTimeout(() => {
-    //       history.push('/market')
-    //     }, 1000);
-    // }
-
-    
 
 
     return(
