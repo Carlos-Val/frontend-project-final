@@ -35,7 +35,7 @@ const Header = (props) => {
             </div>
             <div className="containerWelcomeCart">
                 <div className="textWelcome">
-                    Hola, {props.user[0].nickName}!!
+                    Hola, {props.user[0]?.nickName}!!
                 </div>
                 <div className="containerCart">
                 <div onClick={()=> takeMeToNext('market')}><Cart/></div>

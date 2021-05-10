@@ -43,17 +43,28 @@
         .formLogin{
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             margin-right: $size-g;
-            //border-radius: 3%;
-            border-style: solid double; 
             width: 80%;
             height: 12em;
             background-color: $red;
             -webkit-box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
             -moz-box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
             box-shadow: 25px 18px 13px -4px rgba(199,135,135,1);
+
+            .containerLogoHome{
+                display: flex;
+                justify-content:center;
+                align-items: flex-start;
+                width: 80%;
+                height: 12em;
+
+                .logoHome{
+                    width: 10em;
+                    height: 7em;
+                }
+            }
             
             .containerInputHome{
                 display: flex;

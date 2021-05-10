@@ -35,16 +35,24 @@
     .homeContainer .textForRegisterContainer .formLogin {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       margin-right: 3.5em;
-      border-style: solid double;
       width: 80%;
       height: 12em;
       background-color: #e60000;
       -webkit-box-shadow: 25px 18px 13px -4px #c78787;
       -moz-box-shadow: 25px 18px 13px -4px #c78787;
       box-shadow: 25px 18px 13px -4px #c78787; }
+      .homeContainer .textForRegisterContainer .formLogin .containerLogoHome {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 80%;
+        height: 12em; }
+        .homeContainer .textForRegisterContainer .formLogin .containerLogoHome .logoHome {
+          width: 10em;
+          height: 7em; }
       .homeContainer .textForRegisterContainer .formLogin .containerInputHome {
         display: flex;
         flex-direction: column;

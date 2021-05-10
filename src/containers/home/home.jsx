@@ -8,6 +8,7 @@ import {LOGIN} from '../../redux/types/userTypes.js';
 import imgAlls from '../../assets/img/todos2.jpg';
 import { Button } from 'reactstrap';
 import Footer from '../../components/Footer/Footer';
+import logo from '../../assets/img/logo.png';
 
 
 const Home = (props) => {
@@ -86,6 +87,9 @@ const Home = (props) => {
                 <div className="textForRegisterContainer">
 
                     <div className="formLogin">
+                        <div className="containerLogoHome">
+                            <img className="logoHome" src={logo} alt="logo"/>
+                        </div>
                         <div className="containerInputHome">
                             <Input type="text" placeholder="Nickname" maxLength="10" name="nickName" onChange={handleState}/>
                             <Input type="password" placeholder="Password" name="password" onChange={handleState}/>
