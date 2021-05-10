@@ -1,0 +1,42 @@
+.containerHelp{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+
+    .textHelp{
+        width: 100%;
+        height: 25em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 3em;
+        color: white;
+
+        .textTitleHelp{
+            height: 3em;
+            font-size: 38px;
+
+        }
+        .textExplainHelp{
+            height: 10.5em;
+            padding: 0% 20%;
+            font-size: 20px;
+            line-height: 200%;
+
+
+        }
+    }
+    .helpPhotoDeveloper{
+
+
+        .photoDevelopers{
+            height: 8em;
+            width: 8em;
+            border-radius: 50%;
+            margin-top:-1em;
+        }
+    }
+}
