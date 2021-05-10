@@ -1,6 +1,7 @@
 //Importaciones de los archivos scss para compilar a css
 @import './scss/variables';
 @import './scss/mixins';
+@import './sass/media-query/responsive-design-mobile';
 
 //Importación de contenedores con scss
 @import './containers/Home/Home';
