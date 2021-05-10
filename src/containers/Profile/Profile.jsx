@@ -5,8 +5,6 @@ import Header from '../../components/header/header';
 import imgProfile from '../../assets/img/imagenperfil.jpg';
 import { Button, FormGroup, Input, FormFeedback, Label } from 'reactstrap';
 import {validateField, validateFields} from '../../tools/error.handlers';
-import banner from '../../assets/img/banner2.jpg'
-import Footer from '../../components/Footer/Footer';
 import { useHistory } from 'react-router-dom';
 
 

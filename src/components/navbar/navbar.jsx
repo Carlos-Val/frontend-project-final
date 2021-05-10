@@ -11,6 +11,7 @@ import {useHistory} from 'react-router-dom';
 import { LOGOUTCOMIC } from '../../redux/types/comicTypes';
 import { LOGOUTSAVE } from '../../redux/types/saveComicTypes';
 import { LOGOUTCART } from '../../redux/types/cartTypes';
+import gif1 from '../../assets/img/adios.gif';
 
 
 function Navbar(props) {
@@ -29,7 +30,17 @@ function Navbar(props) {
  
        setTimeout(()=> {
            history.push('/');
-       },300);
+       },5000);
+
+       return(
+         <div className="containerGif">
+            <div className="gifLogout">
+              <img src={gif1} alt="gif1"/>
+            </div>
+         </div>
+
+       )
+
    };
  
  

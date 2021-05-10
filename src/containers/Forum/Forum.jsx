@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/header/header.jsx';
-import gif from '../../assets/img/trabajandolo.gif';
+import gif from '../../assets/img/trabajando2.gif';
 
 
 const Forum = () => {
@@ -14,7 +14,7 @@ const Forum = () => {
 
                 <div className="containerBody">
                     <div className="bodyForum">
-                        <img src={gif} alt="gif"/>
+                        <img className="imgForum" src={gif} alt="gif"/>
                     </div>
                 </div>
                 

@@ -432,6 +432,11 @@
     display: flex;
     justify-content: center;
     align-items: center; }
+    .containerForum .containerBody .bodyForum {
+      margin-top: 2em; }
+      .containerForum .containerBody .bodyForum .imgForum {
+        height: 22em;
+        width: 35em; }
 
 .containerRead {
   display: flex;
