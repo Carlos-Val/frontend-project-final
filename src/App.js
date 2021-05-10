@@ -6,6 +6,7 @@ import Home from './containers/Home/Home';
 import Market from './containers/Market/Market';
 import Principal from './containers/Principal/Principal';
 import Profile from './containers/Profile/Profile';
+import ReadComic from './containers/ReadComic/ReadComic';
 import Register from './containers/Register/Register';
 import showComic from './containers/showComic/showComic';
 import Total from './containers/Total/Total';
@@ -29,6 +30,7 @@ function App() {
           <Route path='/market' exact component={Market}/>
           <Route path='/help' exact component={Help}/>
           <Route path='/forum' exact component={Forum}/>
+          <Route path='/read-comic' exact component={ReadComic}/>
 
 
 

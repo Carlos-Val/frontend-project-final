@@ -7,6 +7,8 @@ import { Button, FormGroup, Input, FormFeedback, Label } from 'reactstrap';
 import {validateField, validateFields} from '../../tools/error.handlers';
 import banner from '../../assets/img/banner2.jpg'
 import Footer from '../../components/Footer/Footer';
+import { useHistory } from 'react-router-dom';
+
 
 
 
@@ -102,6 +104,13 @@ const Profile = (props) => {
 
         
     }
+    const history = useHistory();
+
+    const saveComic = (picture) => {
+
+
+        setTimeout(() => {history.push('/read-comic')}, 500);
+    }
 
 
     
@@ -171,18 +180,21 @@ const Profile = (props) => {
                     <img className="imgBanner" src={banner} alt="banner"/>
                     <div className="textBanner">AQUI TIENES, {props.user[0].nickName}, TUS ÚLTIMOS COMICS COMPRADOS!!</div>
                 </div>
+                <div className="textReadComic">
+                    PINCHA EN EL COMIC PARA PODER LEERLO ONLINE!!
+                </div>
                 <div className="containerComicPurchases">
                     {bought.listBought?.map(picture => 
                         <div className="imgComicPurchases">
-                            
-                            <img className="imgPurchases" src={picture.imageComic} alt="super"/>
-                            
+                            <div onClick={()=>saveComic(picture)} key={picture.id+ "jkd"} className="imageTotal">
+                                <img className="imgPurchases" src={picture.imageComic} alt="super"/>
+                            </div>
                         </div>
                         )}
                 </div>
 
             </div>
-            <Footer/>
+            
 
             
 
