@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="src/assets/img/logo.png" alt="Logo comic"></a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">Carlangas Comic</h3>
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
 
-### `npm start`
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 📝 Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [In the near and not too distant future...](#future_scope)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧐 About <a name = "about"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I have created an ecommerce in reference to the sale of comics from an external API that supplied me with the data to be able to handle it and create an application according to my knowledge.
 
-### `npm run eject`
+This is the frontend part of the project, which can be searched of various types, from the comics that will be presented in the future to those that have been published in the last month, by characters or by title, in addition to have a profile view where you can see the purchases made or modify your profile.Going through who has written or drawn a particular comic and being able to add all the comics you want to the shopping cart for when you want to be able to buy it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+####Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+In order to install the project, NodeJS must be installed, using the version 15.5.1 in this case. We start the project and all its dependencies using the command:
 
-## Learn More
+```
+npm install
+```
+#### Installing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once the dependencies are installed, the project starts by running the command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+````
+npm start
+````
 
-### Code Splitting
+## 🎈 Usage <a name="usage"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The use of this application is quite simple.
 
-### Analyzing the Bundle Size
+The first thing to do is a registration, if you don't have it. Once you have registered with your personal data, you have to log in.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Once logged in, you are on the main screen of the application and you can move in many directions, from a navbar that takes you to your profile to logout through a help view or even go directly to buy the comics you already have in the shopping cart. From the same main view you can do a search that takes you to the result and you can even see the latest news from the carousel and can select the product that interests you.
 
-### Making a Progressive Web App
+## 🚀 In the near and not too distant future... <a name = "future_scope"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+TMy intention is to create a few more functionalities to the application, from being able to read the comics that you have bought to creating a chat or forum where you can speak openly about the latest comics, going through creating a section of comics that interest the user.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ⛏️ Built Using <a name = "built_using"></a>
 
-### Deployment
+- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Docker](https://docs.docker.com/) - Server Deployment
+- [Sass](https://sass-lang.com/) - Library
+- [Bootstrap](https://www.npmjs.com/package/bootstrap) - Library
+- [Reactstrap](https://reactstrap.github.io/) - Library
+- [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) - Work flow
+- [ReactJS](https://es.reactjs.org/) - JavaScript library 
+- [Redux](https://es.redux.js.org/) - JavaScript library 
+- [Express](https://expressjs.com/) - Server Framework
+- [JavaScript](https://www.javascript.com/) - Web Framework
+- [Axios](https://www.axios.com/) - Server Evironment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ✍️ Authors <a name = "authors"></a>
 
-### `npm run build` fails to minify
+- [@carlosval](https://github.com/Carlos-Val) - Idea & Work
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+
+-  A todos los compañeros que he tenido en este Bootcamp. Sin ellos, este proyecto no seria lo que es.
