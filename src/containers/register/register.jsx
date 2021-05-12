@@ -69,7 +69,8 @@ const Register = () => {
                 validated: true
             });
 
-            let result = await axios.post('http://localhost:8000/api/user', user);
+            // let result = await axios.post('http://localhost:8000/api/user', user);
+            let result = await axios.post('https://backend-comic.herokuapp.com/api/user', user);
 
             if(result){
 

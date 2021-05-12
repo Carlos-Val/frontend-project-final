@@ -52,7 +52,8 @@ const Market = (props) => {
             iduser: props.user.id,
         }
 
-        const result = await axios.post('http://127.0.0.1:8000/api/order', body);
+        // const result = await axios.post('http://127.0.0.1:8000/api/order', body);
+        const result = await axios.post('https://backend-comic.herokuapp.com/api/order', body);
 
         props.dispatch({type: REMOVE, payload: index})
         

@@ -50,7 +50,8 @@ const Home = (props) => {
             nickName: dataLogin.nickName,
             password: dataLogin.password
         }
-        let result = await axios.post('http://127.0.0.1:8000/api/user/login', body);
+        // let result = await axios.post('http://127.0.0.1:8000/api/user/login', body);
+        let result = await axios.post('https://backend-comic.herokuapp.com/api/user/login', body);
         console.log(result, "result home")
         props.dispatch({type: LOGIN, payload: result.data[0]})
 

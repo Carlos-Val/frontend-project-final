@@ -17,10 +17,11 @@ const Profile = (props) => {
     });
 
     const userId = props.user?.id
-    console.log(userId, "usur")
+
     const bringOrder = async () => {
         
-        let result = await axios.get(`http://127.0.0.1:8000/api/order/${userId}`, { headers: {"Authorization" : `Bearer ${props.user.token}`}});
+        // let result = await axios.get(`http://127.0.0.1:8000/api/order/${userId}`, { headers: {"Authorization" : `Bearer ${props.user.token}`}});
+        let result = await axios.get(`https://backend-comic.herokuapp.com/api/order/${userId}`, { headers: {"Authorization" : `Bearer ${props.user.token}`}});
         setBought({
             ...bought, listBought: result.data
         })
@@ -88,7 +89,8 @@ const Profile = (props) => {
 
             let id = props.user[0].id;
             
-            await axios.put(`http://localhost:8000/api/user/${id}`, data, { headers: {"Authorization" : `Bearer ${props.user.token}`} } );
+            // await axios.put(`http://localhost:8000/api/user/${id}`, data, { headers: {"Authorization" : `Bearer ${props.user.token}`} } );
+            await axios.put(`https://backend-comic.herokuapp.com/api/user/${id}`, data, { headers: {"Authorization" : `Bearer ${props.user.token}`} } );
             
             
 
